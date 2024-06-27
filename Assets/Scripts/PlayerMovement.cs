@@ -18,4 +18,9 @@ public class PlayerMovement : MonoBehaviour
     {
         playerBody.MovePosition(playerBody.position + movementSpeed * movementVector * Time.fixedDeltaTime);
     }
+
+    public Vector2 getPlayerLocation()
+    {
+        return playerBody.position;
+    }
 }
