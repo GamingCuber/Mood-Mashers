@@ -18,10 +18,6 @@ public class EnemyCollision : MonoBehaviour
             Destroy(gameObject);
 
         }
-        else if (objectLayer == LayerMask.NameToLayer("WaveAttack"))
-        {
-
-        }
     }
 
 }

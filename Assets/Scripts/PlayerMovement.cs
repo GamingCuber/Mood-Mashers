@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerBody.MovePosition(playerBody.position + movementSpeed * movementVector * Time.fixedDeltaTime);
+        playerBody.MovePosition(playerBody.position + movementSpeed * Time.fixedDeltaTime * movementVector);
     }
 
     public Vector2 getPlayerLocation()
