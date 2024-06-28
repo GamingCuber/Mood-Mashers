@@ -1,34 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-
-    public EnemyCreate enemyCreate;
     public PlayerMovement player;
-    public float distanceFromPlayer;
+    public EnemyCreate enemy;
+    public float distanceFromPlayer = 5.0f;
+    // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("spawnEnemy", 0.0f, 3.0f);
+        InvokeRepeating("spawnEnemy", 0.0f, 5.0f);
     }
 
-    void spawnEnemy()
+    private void spawnEnemy()
     {
-        GameObject enemyInstance = enemyCreate.getEnemy();
+        GameObject enemyInstance = enemy.getEnemy();
+        System.Random random = new System.Random();
 
         Vector2 playerLocation = player.getPlayerLocation();
+        // Gets a random angle from 0 to basically 360
+        float angle = (float)random.NextDouble() * 359.99f;
 
-        // Generates a random angle in radians from 0 to 360
-        float randomRads = Random.Range(0f, Mathf.PI * 2);
+        float angleToRadians = angle * Mathf.Deg2Rad;
 
-        float offsetX = Mathf.Cos(randomRads) * distanceFromPlayer;
-        float offsetY = Mathf.Sin(randomRads) * distanceFromPlayer;
+        float offsetX = Mathf.Cos(angleToRadians) * distanceFromPlayer;
+        float offsetY = Mathf.Sin(angleToRadians) * distanceFromPlayer;
 
-        // Generates random location based on player location, random angle, and distanceFromPlayer
-        Vector2 spawnLocation = playerLocation + new Vector2(offsetX, offsetY);
-        Instantiate(enemyInstance, spawnLocation, Quaternion.identity);
+        Vector2 spawnPosition = playerLocation + new Vector2(offsetX, offsetY);
+        Instantiate(enemyInstance, spawnPosition, Quaternion.identity);
 
 
     }
+
+
 }

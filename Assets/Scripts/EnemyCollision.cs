@@ -5,15 +5,22 @@ using UnityEngine;
 public class EnemyCollision : MonoBehaviour
 {
 
-    public PlayerHealth playerHealthManager;
+    public PlayerHealth playerHealth;
+    public EnemyHealth enemyHealth;
+    public float enemyDamage = 10f;
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        LayerMask objectLayer = collider.gameObject.layer;
+        LayerMask objectLayer = collision.gameObject.layer;
         if (objectLayer == LayerMask.NameToLayer("Player"))
         {
-            playerHealthManager.damagePlayer(25);
-            Debug.Log("Attacked Player");
+            playerHealth.damagePlayer(enemyDamage);
+            Destroy(gameObject);
+
+        }
+        else if (objectLayer == LayerMask.NameToLayer("WaveAttack"))
+        {
+
         }
     }
 

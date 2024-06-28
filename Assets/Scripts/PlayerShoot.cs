@@ -18,12 +18,12 @@ public class PlayerShoot : MonoBehaviour
         StartCoroutine(shootWaves());
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        LayerMask objectLayer = collider.gameObject.layer;
+        LayerMask objectLayer = collision.gameObject.layer;
         if (objectLayer == LayerMask.NameToLayer("Enemy"))
         {
-            enemyHealthManager.damageEnemy(playerDamage);
+            enemyHealthManager.health -= playerDamage;
         }
     }
 
