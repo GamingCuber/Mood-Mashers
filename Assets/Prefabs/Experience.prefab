@@ -161,6 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d00a3c1cee311b8f8c9c0be9d831615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceUntilFollow: 0.75
+  hasHit: 0
+  distanceUntilFollow: 1
+  XPCollider: {fileID: 2563950791170342320}
+  forceFromPlayer: 7.5
+  distanceFromPlayer: 2
   XPBody: {fileID: 5158002263070226584}
-  followSpeed: 10
+  acceleration: 15
+  maxSpeed: 50
