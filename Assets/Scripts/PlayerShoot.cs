@@ -6,7 +6,6 @@ public class PlayerShoot : MonoBehaviour
 {
     public GameObject leftWave;
     public GameObject rightWave;
-    public EnemyHealth enemyHealthManager;
     public float playerDamage = 1.0f;
     public float secondsPerShoot = 0.0f;
     public float frames = 3.0f;
@@ -17,16 +16,7 @@ public class PlayerShoot : MonoBehaviour
         rightWave.SetActive(false);
         StartCoroutine(shootWaves());
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        LayerMask objectLayer = collision.gameObject.layer;
-        if (objectLayer == LayerMask.NameToLayer("Enemy"))
-        {
-            enemyHealthManager.health -= playerDamage;
-        }
-    }
-
+    // Basically a function that uses frames to create an attack
     IEnumerator shootWaves()
     {
         while (true)

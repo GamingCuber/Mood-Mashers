@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCollision : MonoBehaviour
+public class PlayerCollision : MonoBehaviour
 {
 
     public PlayerHealth playerHealth;
-    public EnemyHealth enemyHealth;
-    public float enemyDamage = 10f;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         LayerMask objectLayer = collision.gameObject.layer;
-        if (objectLayer == LayerMask.NameToLayer("Player"))
+        // If the player hits an enemy
+        if (objectLayer == LayerMask.NameToLayer("Enemy"))
         {
-            playerHealth.damagePlayer(enemyDamage);
-            Destroy(gameObject);
-
+            playerHealth.damagePlayer(2.0f);
+            Destroy(collision.gameObject);
         }
     }
 

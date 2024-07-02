@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float health = 20f;
-
+    // Helper function that damages the player by a given amount "damage"
     public void damagePlayer(float damage)
     {
         health -= damage;

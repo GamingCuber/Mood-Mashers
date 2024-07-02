@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 3389815651664409651}
   - component: {fileID: 424948357171917128}
   - component: {fileID: 7938199288887872190}
-  - component: {fileID: 4836887712862990678}
-  - component: {fileID: 2164934141973418469}
   - component: {fileID: 4347142538444620454}
+  - component: {fileID: 4804136473628096785}
   m_Layer: 7
   m_Name: BaseEnemy
   m_TagString: Enemy
@@ -151,31 +150,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4836887712862990678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4497973180776560642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9b37e81c2c1ce54aa0f9eaa3cd7bd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealthManager: {fileID: 0}
---- !u!114 &2164934141973418469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4497973180776560642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4944b846bc29d14fc99b2915e5acdf6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4347142538444620454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +163,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+--- !u!114 &4804136473628096785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497973180776560642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca97940c2c9fadbb2a1a6f3712c223dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followSpeed: 2.5

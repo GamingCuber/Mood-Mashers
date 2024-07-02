@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Creates a movement vector based on player input
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
     }
@@ -17,10 +18,5 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         playerBody.MovePosition(playerBody.position + movementSpeed * Time.fixedDeltaTime * movementVector);
-    }
-
-    public Vector2 getPlayerLocation()
-    {
-        return playerBody.position;
     }
 }
