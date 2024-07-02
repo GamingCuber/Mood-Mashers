@@ -6,6 +6,7 @@ public class PlayerCollision : MonoBehaviour
 {
 
     public PlayerHealth playerHealth;
+    public PlayerXPManager playerXPManager;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,6 +15,11 @@ public class PlayerCollision : MonoBehaviour
         if (objectLayer == LayerMask.NameToLayer("Enemy"))
         {
             playerHealth.damagePlayer(2.0f);
+            Destroy(collision.gameObject);
+        }
+        else if (objectLayer == LayerMask.NameToLayer("Experience"))
+        {
+            playerXPManager.addXP(1);
             Destroy(collision.gameObject);
         }
     }

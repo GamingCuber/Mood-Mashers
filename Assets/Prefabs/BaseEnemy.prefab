@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7938199288887872190}
   - component: {fileID: 4347142538444620454}
   - component: {fileID: 4804136473628096785}
+  - component: {fileID: 686127521972100250}
   m_Layer: 7
   m_Name: BaseEnemy
   m_TagString: Enemy
@@ -163,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  enemyXPManager: {fileID: 686127521972100250}
 --- !u!114 &4804136473628096785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +178,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 2.5
+--- !u!114 &686127521972100250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497973180776560642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12f9cb0bb55c91c7d8aebd1422e724f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XP: {fileID: 2979400687923447167, guid: 6db3296db55795c96ad7cc5ae1ed8035, type: 3}

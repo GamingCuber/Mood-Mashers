@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 
     public float health = 2f;
     private float playerDamage;
+    public EnemyDropXP enemyXPManager;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
     private void killEnemy()
     {
         Debug.Log("Destroyed Enemy");
+        enemyXPManager.dropXP();
         Destroy(gameObject);
     }
 }
