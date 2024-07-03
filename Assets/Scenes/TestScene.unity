@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 111675816}
   - component: {fileID: 111675817}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: ZombieSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   player: {fileID: 1712089456}
   enemy: {fileID: 4497973180776560642, guid: 567a5eadc20164d6b821b8e0e2cb4fa1, type: 3}
   distanceFromPlayer: 5
+  secondsPerSpawn: 2
 --- !u!1 &144938675
 GameObject:
   m_ObjectHideFlags: 0

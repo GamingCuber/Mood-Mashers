@@ -9,10 +9,11 @@ public class SpawnEnemy : MonoBehaviour
     public PlayerMovement player;
     public GameObject enemy;
     public float distanceFromPlayer = 5.0f;
+    [SerializeField] float secondsPerSpawn;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(spawnEnemy), 0.0f, 5.0f);
+        InvokeRepeating(nameof(spawnEnemy), 0.0f, secondsPerSpawn);
     }
 
     private void spawnEnemy()
