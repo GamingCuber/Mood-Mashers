@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Zombie_walk
+  m_Name: SlugInitial_walk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 28e4c904bf4614680901a053a64473b0, type: 3}
-    - time: 0.2
-      value: {fileID: 21300000, guid: 0d3fd79a8bc36942aa42f714b3c2ad0f, type: 3}
+      value: {fileID: 21300000, guid: bb512e7f0ec65df07a56eae6d64e02e6, type: 3}
+    - time: 0.21666667
+      value: {fileID: 21300000, guid: bb512e7f0ec65df07a56eae6d64e02e6, type: 3}
     - time: 0.4
-      value: {fileID: 21300000, guid: 28e4c904bf4614680901a053a64473b0, type: 3}
+      value: {fileID: 21300000, guid: fdb68898264ae9d2bad72003a84f8695, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 28e4c904bf4614680901a053a64473b0, type: 3}
-    - {fileID: 21300000, guid: 0d3fd79a8bc36942aa42f714b3c2ad0f, type: 3}
-    - {fileID: 21300000, guid: 28e4c904bf4614680901a053a64473b0, type: 3}
+    - {fileID: 21300000, guid: bb512e7f0ec65df07a56eae6d64e02e6, type: 3}
+    - {fileID: 21300000, guid: bb512e7f0ec65df07a56eae6d64e02e6, type: 3}
+    - {fileID: 21300000, guid: fdb68898264ae9d2bad72003a84f8695, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

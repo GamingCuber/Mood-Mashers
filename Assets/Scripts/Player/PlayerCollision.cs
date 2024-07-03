@@ -15,7 +15,6 @@ public class PlayerCollision : MonoBehaviour
         if (objectLayer == LayerMask.NameToLayer("Enemy"))
         {
             playerHealth.damagePlayer(2.0f);
-            Destroy(collision.gameObject);
         }
         else if (objectLayer == LayerMask.NameToLayer("Experience"))
         {

@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 7938199288887872190}
   - component: {fileID: 3846834981551342867}
   - component: {fileID: 4347142538444620454}
-  - component: {fileID: 4804136473628096785}
   - component: {fileID: 686127521972100250}
   - component: {fileID: 911662988560785681}
+  - component: {fileID: 1115375371109187695}
   m_Layer: 7
-  m_Name: ZombieAubrey
+  m_Name: SlugAubrey
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ Animator:
   m_GameObject: {fileID: 4497973180776560642}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3847835de2963e56fbfb250eef9dc252, type: 2}
+  m_Controller: {fileID: 9100000, guid: cc33e24cb8385b69aa7ec03f5b86aa6d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -135,19 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   enemyXPManager: {fileID: 686127521972100250}
---- !u!114 &4804136473628096785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4497973180776560642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca97940c2c9fadbb2a1a6f3712c223dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followSpeed: 1.5
 --- !u!114 &686127521972100250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +189,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 28e4c904bf4614680901a053a64473b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb512e7f0ec65df07a56eae6d64e02e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -213,3 +200,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1115375371109187695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497973180776560642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d467f881a09caacb11f33558808745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedWhenPassive: 0.25
+  speedWhenAngry: 4.5
+  secondsUntilAngry: 5
