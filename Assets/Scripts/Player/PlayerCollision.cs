@@ -14,7 +14,11 @@ public class PlayerCollision : MonoBehaviour
         // If the player hits an enemy
         if (objectLayer == LayerMask.NameToLayer("Enemy"))
         {
-            playerHealth.damagePlayer(2.0f);
+            if (!playerHealth.isInvincible)
+            {
+                float enemyDamage = collision.gameObject.GetComponent<EnemyDamage>().damage;
+                playerHealth.damagePlayer(enemyDamage);
+            }
         }
         else if (objectLayer == LayerMask.NameToLayer("Experience"))
         {
