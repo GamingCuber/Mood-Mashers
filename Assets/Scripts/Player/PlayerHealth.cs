@@ -22,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
 
     void killPlayer()
     {
-        Debug.Log("Killed Player");
         gameObject.SetActive(false);
     }
     private void removeInvincibility()

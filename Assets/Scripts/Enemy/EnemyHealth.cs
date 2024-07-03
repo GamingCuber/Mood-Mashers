@@ -32,7 +32,6 @@ public class EnemyHealth : MonoBehaviour
 
     private void killEnemy()
     {
-        Debug.Log("Destroyed Enemy");
         enemyXPManager.dropXP();
         Destroy(gameObject);
     }

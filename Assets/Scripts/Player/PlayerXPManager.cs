@@ -12,7 +12,6 @@ public class PlayerXPManager : MonoBehaviour
     public void addXP(int XPAmount)
     {
         currentAmount += XPAmount;
-        Debug.Log("Picked up XP");
         if (currentAmount >= amountUntilNextLevel)
         {
             levelUp();
@@ -23,7 +22,6 @@ public class PlayerXPManager : MonoBehaviour
     {
         currentAmount = 0;
         currentLevel++;
-        Debug.Log("You leveled up! You're at level " + currentLevel);
 
     }
 
