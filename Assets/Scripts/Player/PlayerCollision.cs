@@ -19,7 +19,7 @@ public class PlayerCollision : MonoBehaviour
         }
         else if (objectLayer == LayerMask.NameToLayer("Experience"))
         {
-            XPFollowPlayer XPInstanceManager = collision.gameObject.GetComponent<XPFollowPlayer>();
+            var XPInstanceManager = collision.gameObject.GetComponent<XPFollowPlayer>();
             if (XPInstanceManager.hasHit)
             {
 

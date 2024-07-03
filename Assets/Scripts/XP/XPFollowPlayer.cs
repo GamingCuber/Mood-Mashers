@@ -25,7 +25,7 @@ public class XPFollowPlayer : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 playerLocation = player.transform.position;
-        float distanceFromPlayer = Vector2.Distance(playerLocation, transform.position);
+        var distanceFromPlayer = Vector2.Distance(playerLocation, transform.position);
         // If the player hasn't hit the XP orb yet
         if (!hasHit)
         {
@@ -57,16 +57,16 @@ public class XPFollowPlayer : MonoBehaviour
     {
         // Disables the collider to prevent any odd collisions from occurring
         XPCollider.enabled = false;
-        System.Random random = new System.Random();
+        var random = new System.Random();
         // Gets a random angle from 0 to 360
-        float angle = (float)random.NextDouble() * 360;
+        var angle = (float)random.NextDouble() * 360;
 
-        float angleToRadians = angle * Mathf.Deg2Rad;
+        var angleToRadians = angle * Mathf.Deg2Rad;
         // Uses that angle to get a Vector2 a certain angle and distance away from the player
-        float X = Mathf.Cos(angleToRadians) * distanceFromPlayer;
-        float Y = Mathf.Sin(angleToRadians) * distanceFromPlayer;
+        var X = Mathf.Cos(angleToRadians) * distanceFromPlayer;
+        var Y = Mathf.Sin(angleToRadians) * distanceFromPlayer;
 
-        Vector2 direction = new Vector2(X, Y);
+        var direction = new Vector2(X, Y);
         // Applies a force based on that vector
         XPBody.AddForce(direction * forceFromPlayer, ForceMode2D.Impulse);
         // Tracks whether the player has interacted with the orb

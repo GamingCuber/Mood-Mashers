@@ -26,7 +26,7 @@ public class PlayerShoot : MonoBehaviour
             leftWave.SetActive(true);
             rightWave.SetActive(true);
 
-            for (int i = 0; i < frames; i++)
+            for (var i = 0; i < frames; i++)
             {
                 yield return new WaitForEndOfFrame();
             }
