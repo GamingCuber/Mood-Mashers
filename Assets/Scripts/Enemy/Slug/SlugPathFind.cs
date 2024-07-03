@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlugPathFindPlayer : MonoBehaviour
+public class SlugPathFind : MonoBehaviour
 {
 
     [SerializeField] private float speedWhenPassive;

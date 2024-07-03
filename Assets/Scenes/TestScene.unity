@@ -818,7 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   isInvincible: 0
-  secondsInvincible: 0
+  secondsInvincible: 2
   PlayerCollider: {fileID: 1712089459}
 --- !u!114 &1712089463
 MonoBehaviour:
