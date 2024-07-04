@@ -5,23 +5,10 @@ using UnityEngine;
 
 public class GameLoopManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        Invoke(nameof(pauseGame), 10f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
-
-    private void startGame()
-    {
-
-    }
-
     private void clearEnemies()
     {
         // Gets all things on screen
@@ -41,11 +28,6 @@ public class GameLoopManager : MonoBehaviour
         {
             Destroy(enemiesList[i]);
         }
-
-    }
-
-    private void pauseGame()
-    {
 
     }
 }
