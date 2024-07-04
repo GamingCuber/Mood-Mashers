@@ -10,14 +10,16 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject enemy;
     public float distanceFromPlayer = 5.0f;
     [SerializeField] float secondsPerSpawn;
+    [SerializeField] float secondsBeforeSpawn;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(spawnEnemy), 0.0f, secondsPerSpawn);
+        InvokeRepeating(nameof(spawnEnemy), secondsBeforeSpawn, secondsPerSpawn);
     }
 
     private void spawnEnemy()
     {
+
         var random = new System.Random();
         // Gets the player location
         Vector2 playerLocation = player.transform.position;
