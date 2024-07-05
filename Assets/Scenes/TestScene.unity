@@ -345,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &474458662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1725,6 +1725,7 @@ MonoBehaviour:
   isInvincible: 0
   secondsInvincible: 2
   PlayerCollider: {fileID: 1712089459}
+  healthBar: {fileID: 1259412068}
 --- !u!114 &1712089463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,6 +1754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountUntilNextLevel: 3
   currentAmount: 0
+  XPBar: {fileID: 1498655053}
 --- !u!1 &1770768661
 GameObject:
   m_ObjectHideFlags: 0
