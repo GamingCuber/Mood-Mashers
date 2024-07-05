@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health = 20f;
+    public float currentHealth;
+    public float maxHealth = 20f;
     public bool isInvincible = false;
     [SerializeField] private float secondsInvincible;
     [SerializeField] private Collider2D PlayerCollider;
+    [SerializeField] private HealthBarManager healthBar;
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
     // Helper function that damages the player by a given amount "damage"
     public void damagePlayer(float damage)
     {
         isInvincible = true;
+        healthBar.updateBar();
         Invoke(nameof(removeInvincibility), secondsInvincible);
-        health -= damage;
-        if (health < 0)
+        currentHealth -= damage;
+        if (currentHealth < 0)
         {
             killPlayer();
         }
