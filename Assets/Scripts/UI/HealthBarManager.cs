@@ -8,11 +8,6 @@ public class HealthBarManager : MonoBehaviour
     public PlayerHealth playerHealth;
     [SerializeField] private Image healthBar;
 
-    void Update()
-    {
-        updateBar();
-    }
-
     public void updateBar()
     {
         float fillAmount = playerHealth.currentHealth / playerHealth.maxHealth;

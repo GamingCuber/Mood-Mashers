@@ -1527,6 +1527,7 @@ GameObject:
   - component: {fileID: 1712089462}
   - component: {fileID: 1712089463}
   - component: {fileID: 1712089464}
+  - component: {fileID: 1712089465}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1755,6 +1756,19 @@ MonoBehaviour:
   amountUntilNextLevel: 3
   currentAmount: 0
   XPBar: {fileID: 1498655053}
+--- !u!114 &1712089465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712089455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47852fc46fabf7205bcbff45b0c1e4a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsPerSuper: 5
 --- !u!1 &1770768661
 GameObject:
   m_ObjectHideFlags: 0
