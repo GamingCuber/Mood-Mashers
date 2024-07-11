@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerXPManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerXPManager : MonoBehaviour
     public float currentAmount = 0;
     private int currentLevel = 1;
     [SerializeField] private XPBarManager XPBar;
+    [SerializeField] private UpgradePanelManager UpgradePanel;
 
     public void addXP(int XPAmount)
     {
@@ -22,6 +24,7 @@ public class PlayerXPManager : MonoBehaviour
 
     private void levelUp()
     {
+        UpgradePanel.OpenPanel();
         currentAmount = 0;
         currentLevel++;
 
