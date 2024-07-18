@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float secondsInvincible;
     [SerializeField] private Collider2D PlayerCollider;
     [SerializeField] private HealthBarManager healthBar;
+    private bool isDead;
     void Start()
     {
         currentHealth = maxHealth;
@@ -17,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     // Helper function that damages the player by a given amount "damage"
     public void damagePlayer(float damage)
     {
+        if (isDead == true) { return; }
         isInvincible = true;
         healthBar.updateBar();
         Invoke(nameof(removeInvincibility), secondsInvincible);
@@ -29,7 +31,8 @@ public class PlayerHealth : MonoBehaviour
 
     void killPlayer()
     {
-        gameObject.SetActive(false);
+        GetComponent<PlayerGameOver>().GameOver();
+        isDead = true;
     }
     private void removeInvincibility()
     {
