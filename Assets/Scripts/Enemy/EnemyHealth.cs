@@ -6,13 +6,13 @@ public class EnemyHealth : MonoBehaviour
 {
 
     public float health = 2f;
-    private float playerDamage;
+    private PlayerShoot playerShoot;
     public EnemyDropXP enemyXPManager;
 
     void Start()
     {
         // This line gets the player object, gets the PlayerShoot script, and then accesses the playerDamage public field
-        playerDamage = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>().playerDamage;
+        playerShoot = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
         // Checks if the Enemy gets hit by an attack by the player
         if (objectLayer == LayerMask.NameToLayer("Attack"))
         {
+            float playerDamage = playerShoot.finalDamage();
             // Subtracts enemy health
             health -= playerDamage;
             if (health <= 0)
