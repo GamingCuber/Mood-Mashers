@@ -9,9 +9,10 @@ public class PlayerXPManager : MonoBehaviour
     public float amountUntilNextLevel = 1;
     public float currentAmount = 0;
     private int currentLevel = 1;
+
     [SerializeField] private XPBarManager XPBar;
     [SerializeField] private UpgradePanelManager UpgradePanel;
-
+    
     public void addXP(int XPAmount)
     {
         currentAmount += XPAmount;

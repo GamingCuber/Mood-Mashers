@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     float elapsedTime;
+   /// Timer that counts up instead of down. 
    void Update()
    {
         elapsedTime += Time.deltaTime;
