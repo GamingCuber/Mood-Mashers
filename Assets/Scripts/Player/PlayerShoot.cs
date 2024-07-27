@@ -16,12 +16,14 @@ public class PlayerShoot : MonoBehaviour
         leftWave.SetActive(false);
         rightWave.SetActive(false);
         StartCoroutine(shootWaves());
+       
     }
     
     // Calculates Modified Damage, Returns Final Damage
     public float finalDamage()
     {
         float damage = playerDamage;
+        
         foreach(PossibleUpgrades upgrade in upgrades.Upgrades)
         {
             if (upgrade == PossibleUpgrades.AttackUp)
@@ -31,7 +33,8 @@ public class PlayerShoot : MonoBehaviour
         }
         return damage;
     }
-    
+
+     
     // Basically a function that uses frames to create an attack
     IEnumerator shootWaves()
     {
