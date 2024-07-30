@@ -1538,7 +1538,7 @@ GameObject:
   - component: {fileID: 605341566}
   - component: {fileID: 605341565}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: LevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3392,7 +3392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerXP: {fileID: 1712089464}
   XPBar: {fileID: 1498655051}
-  levelText: {fileID: 983798438}
+  levelText: {fileID: 605341565}
 --- !u!1 &1519342020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3963,9 +3963,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18f35095bed1798caf3e3f9523ff85c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgrades: {fileID: 2032801322}
   currentHealth: 0
   maxHealth: 20
-  isInvincible: 1
+  isInvincible: 0
   secondsInvincible: 2
   PlayerCollider: {fileID: 1712089459}
   healthBar: {fileID: 1259412068}
@@ -7423,7 +7424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2c25b8a80fc154fb4cf6c58a8553dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Upgrades: 01000000
+  Upgrades: 0100000002000000
 --- !u!1 &2045216376
 GameObject:
   m_ObjectHideFlags: 0

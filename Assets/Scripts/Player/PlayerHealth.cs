@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public PlayerUpgrades upgrades;
     public float currentHealth;
     public float maxHealth = 20f;
     public bool isInvincible = false;
@@ -15,6 +16,21 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+    
+    public float finalHealth()
+    {
+        float health = maxHealth;
+        foreach(PossibleUpgrades upgrade in upgrades.Upgrades)
+        {
+            if (upgrade == PossibleUpgrades.HealthUp)
+            {
+                health *= 20;
+            }
+        }
+        return health;
+    }
+    
+    
     // Helper function that damages the player by a given amount "damage"
     public void damagePlayer(float damage)
     {

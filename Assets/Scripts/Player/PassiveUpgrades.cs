@@ -16,6 +16,7 @@ public class PassiveUpgrades
     {
         Upgrades = new List<PossibleUpgrades>();
         Upgrades.Add(PossibleUpgrades.AttackUp);
+        Upgrades.Add(PossibleUpgrades.HealthUp);
     
     }
 }

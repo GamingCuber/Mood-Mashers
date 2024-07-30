@@ -6,7 +6,7 @@ public class UpgradePanelManager : MonoBehaviour
 {
     [SerializeField] GameObject panel;
     PauseMenuManager PauseManager;
-
+     
 
     private void Awake()
     {
