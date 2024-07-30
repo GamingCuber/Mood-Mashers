@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
         // Checks if the Enemy gets hit by an attack by the player
         if (objectLayer == LayerMask.NameToLayer("Attack"))
         {
-            float playerDamage = playerShoot.finalDamage();
+            float playerDamage = playerShoot.playerDamage;
             // Subtracts enemy health
             health -= playerDamage;
             if (health <= 0)

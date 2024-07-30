@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public PlayerUpgrades upgrades;
     public GameObject leftWave;
     public GameObject rightWave;
     public float playerDamage = 1.0f;
@@ -17,21 +16,6 @@ public class PlayerShoot : MonoBehaviour
         rightWave.SetActive(false);
         StartCoroutine(shootWaves());
     }
-    
-    // Calculates Modified Damage, Returns Final Damage
-    public float finalDamage()
-    {
-        float damage = playerDamage;
-        foreach(PossibleUpgrades upgrade in upgrades.Upgrades)
-        {
-            if (upgrade == PossibleUpgrades.AttackUp)
-            {
-                damage *= 200;
-            }
-        }
-        return damage;
-    }
-    
     // Basically a function that uses frames to create an attack
     IEnumerator shootWaves()
     {
