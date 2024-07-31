@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelUpManager : MonoBehaviour
 {
@@ -16,7 +18,9 @@ public class LevelUpManager : MonoBehaviour
 
     public enum LevelUpgrades
     {
-        HealthUp, AttackUp, SpeedUp, HasteUp, HammerUp, ScaleUp
+        AttackUp, HammerUp, HasteUp, HealthUp, HomingUp, PlushieUp, SpeedUp, SwirlUp
+
+
     }
     public void healthUp()
     {

@@ -2,60 +2,63 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Unity.VisualStudio.Editor;
+using TMPro;
+using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
 
 public class UpgradePanelManager : MonoBehaviour
 {
     [SerializeField] GameObject panel;
     [SerializeField] LevelUpManager levelUps;
+    [SerializeField] Sprite[] upgradeImages;
+    [SerializeField] string[] upgradeTexts;
 
     PauseMenuManager PauseManager;
 
-    public GameObject FirstLevelUpButton;
-    public GameObject SecondLevelUpButton;
+    public TMP_Text firstButtonText;
+    public TMP_Text secondButtonText;
+    public TMP_Text thirdButtonText;
 
-    public GameObject ThirdLevelUpButton;
-
-    private List<LevelUpManager.LevelUpgrades> levelUpsList;
-    private LevelUpManager.LevelUpgrades firstUpgrade;
-    private LevelUpManager.LevelUpgrades secondUpgrade;
-    private LevelUpManager.LevelUpgrades thirdUpgrade;
+    public Image firstButtonImage;
+    public Image secondButtonImage;
+    public Image thirdButtonImage;
 
 
-    private void generateUpgrades()
+    private List<int> randomIndexes()
     {
-
-        System.Array possibleLevelUps = Enum.GetValues(typeof(LevelUpManager.LevelUpgrades));
-        System.Array indexes = randomIndexes(0, possibleLevelUps.Length - 1).ToArray();
-        firstUpgrade = (LevelUpManager.LevelUpgrades)possibleLevelUps.GetValue((int)indexes.GetValue(0));
-        secondUpgrade = (LevelUpManager.LevelUpgrades)possibleLevelUps.GetValue((int)indexes.GetValue(0));
-        thirdUpgrade = (LevelUpManager.LevelUpgrades)possibleLevelUps.GetValue((int)indexes.GetValue(0));
-    }
-
-    private List<int> randomIndexes(int min, int max)
-    {
-        List<int> randomIndexes = new List<int>();
-        System.Random random = new System.Random();
-        int currentNumber = random.Next(min, max);
-        for (int i = 0; i < 3; i++)
+        var indexes = new List<int>();
+        var numberOfUpgrades = Enum.GetValues(typeof(LevelUpManager.LevelUpgrades)).Length;
+        for (var i = 0; i < numberOfUpgrades - 1; i++)
         {
-            while (randomIndexes.Contains(currentNumber))
-            {
-                currentNumber = random.Next(min, max);
-                if (!randomIndexes.Contains(currentNumber))
-                {
-                    randomIndexes.Add(currentNumber);
-                }
-            }
+            indexes.Add(i);
         }
-
-        return randomIndexes;
+        var random = new System.Random();
+        // Just shuffles the index list so the order is random
+        indexes = indexes.OrderBy(i => random.Next()).ToList();
+        return indexes.GetRange(0, 3);
     }
     private void setButtonText()
     {
 
+        var indexes = randomIndexes();
+
+        firstButtonText.SetText(upgradeTexts[indexes[0]]);
+        secondButtonText.SetText(upgradeTexts[indexes[1]]);
+        thirdButtonText.SetText(upgradeTexts[indexes[2]]);
+
+        firstButtonImage.sprite = upgradeImages[indexes[0]];
+        secondButtonImage.sprite = upgradeImages[indexes[1]];
+        thirdButtonImage.sprite = upgradeImages[indexes[2]];
+
+        indexes.Clear();
+
     }
+
+
 
     private void Awake()
     {
@@ -64,6 +67,7 @@ public class UpgradePanelManager : MonoBehaviour
 
     public void OpenPanel()
     {
+        setButtonText();
         PauseManager.pauseGame();
         panel.SetActive(true);
     }
