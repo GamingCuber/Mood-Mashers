@@ -6,6 +6,7 @@ using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using Unity.Collections;
 using Unity.VisualScripting;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
@@ -19,6 +20,7 @@ public class UpgradePanelManager : MonoBehaviour
 
     PauseMenuManager PauseManager;
 
+
     public TMP_Text firstButtonText;
     public TMP_Text secondButtonText;
     public TMP_Text thirdButtonText;
@@ -26,7 +28,23 @@ public class UpgradePanelManager : MonoBehaviour
     public Image firstButtonImage;
     public Image secondButtonImage;
     public Image thirdButtonImage;
+    public Button firstButton;
+    public Button secondButton;
+    public Button thirdButton;
+    private Array levelUpgrades;
+    private List<int> indexes;
 
+    void Start()
+    {
+        fillUpgradesList();
+        firstButton.onClick.AddListener(delegate { onLevelUpClick(firstButton); });
+        secondButton.onClick.AddListener(delegate { onLevelUpClick(secondButton); });
+        thirdButton.onClick.AddListener(delegate { onLevelUpClick(thirdButton); });
+    }
+    private void fillUpgradesList()
+    {
+        levelUpgrades = Enum.GetValues(typeof(LevelUpManager.LevelUpgrades));
+    }
 
     private List<int> randomIndexes()
     {
@@ -44,7 +62,7 @@ public class UpgradePanelManager : MonoBehaviour
     private void setButtonText()
     {
 
-        var indexes = randomIndexes();
+        indexes = randomIndexes();
 
         firstButtonText.SetText(upgradeTexts[indexes[0]]);
         secondButtonText.SetText(upgradeTexts[indexes[1]]);
@@ -54,12 +72,30 @@ public class UpgradePanelManager : MonoBehaviour
         secondButtonImage.sprite = upgradeImages[indexes[1]];
         thirdButtonImage.sprite = upgradeImages[indexes[2]];
 
-        indexes.Clear();
 
     }
 
+    public void onLevelUpClick(Button clickedButton)
+    {
 
+        LevelUpManager.LevelUpgrades upgrade = LevelUpManager.LevelUpgrades.None;
+        if (clickedButton == firstButton)
+        {
+            upgrade = (LevelUpManager.LevelUpgrades)levelUpgrades.GetValue(indexes[0]);
+        }
+        else if (clickedButton == secondButton)
+        {
+            upgrade = (LevelUpManager.LevelUpgrades)levelUpgrades.GetValue(indexes[1]);
+        }
+        else if (clickedButton == thirdButton)
+        {
+            upgrade = (LevelUpManager.LevelUpgrades)levelUpgrades.GetValue(indexes[2]);
+        }
+        indexes.Clear();
 
+        levelUps.chooseLevelUp(upgrade);
+        ClosePanel();
+    }
     private void Awake()
     {
         PauseManager = GetComponent<PauseMenuManager>();

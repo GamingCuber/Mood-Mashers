@@ -15,40 +15,75 @@ public class LevelUpManager : MonoBehaviour
     public PlayerHealth playerHealth;
     public PlayerShoot playerShoot;
     public PlayerMovement playerMovement;
+    private LevelUpgrades currentUpgrade;
 
     public enum LevelUpgrades
     {
-        AttackUp, HammerUp, HasteUp, HealthUp, HomingUp, PlushieUp, SpeedUp, SwirlUp
-
-
+        AttackUp,
+        HammerUp,
+        HasteUp,
+        HealthUp,
+        HomingUp,
+        PlushieUp,
+        SpeedUp,
+        SwirlUp,
+        None
     }
-    public void healthUp()
+    public void chooseLevelUp(LevelUpgrades upgrade)
+    {
+        switch (upgrade)
+        {
+            case LevelUpgrades.AttackUp:
+                attackUp();
+                break;
+            case LevelUpgrades.HammerUp:
+                hammerUp();
+                break;
+            case LevelUpgrades.HasteUp:
+                hasteUp();
+                break;
+            case LevelUpgrades.HealthUp:
+                healthUp();
+                break;
+            case LevelUpgrades.HomingUp:
+                break;
+            case LevelUpgrades.PlushieUp:
+                break;
+            case LevelUpgrades.SpeedUp:
+                speedUp();
+                break;
+            case LevelUpgrades.SwirlUp:
+                swirl();
+                break;
+        }
+    }
+    private void healthUp()
     {
         playerHealth.maxHealth *= healthScaleUp;
     }
 
-    public void attackUp()
+    private void attackUp()
     {
         playerShoot.playerDamage *= attackScaleUp;
     }
 
-    public void speedUp()
+    private void speedUp()
     {
         playerMovement.movementSpeed *= speedScaleUp;
     }
 
-    public void hasteUp()
+    private void hasteUp()
     {
         playerShoot.secondsPerShoot *= hasteScaleUp;
     }
 
-    public void hammerUp()
+    private void hammerUp()
     {
         scaleUp(hammerScaleUp, playerShoot.leftWave);
         scaleUp(hammerScaleUp, playerShoot.rightWave);
     }
 
-    public void swirl()
+    private void swirl()
     {
 
     }
