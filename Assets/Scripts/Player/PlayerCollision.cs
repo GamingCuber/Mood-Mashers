@@ -26,7 +26,7 @@ public class PlayerCollision : MonoBehaviour
             if (XPInstanceManager.hasHit)
             {
 
-                playerXPManager.addXP(1);
+                playerXPManager.addXP(2);
                 Destroy(collision.gameObject);
             }
             else

@@ -7,8 +7,8 @@ public class PlayerShoot : MonoBehaviour
     public GameObject leftWave;
     public GameObject rightWave;
     public float playerDamage = 1.0f;
-    public float secondsPerShoot = 0.0f;
-    public float frames = 3.0f;
+    public float secondsPerShoot = 2.0f;
+    public float frames = 20.0f;
 
     void Start()
     {

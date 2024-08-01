@@ -96,21 +96,17 @@ public class UpgradePanelManager : MonoBehaviour
         levelUps.chooseLevelUp(upgrade);
         ClosePanel();
     }
-    private void Awake()
-    {
-        PauseManager = GetComponent<PauseMenuManager>();
-    }
 
     public void OpenPanel()
     {
         setButtonText();
-        PauseManager.pauseGame();
+        Time.timeScale = 0f;
         panel.SetActive(true);
     }
 
     public void ClosePanel()
     {
-        PauseManager.resumeGame();
+        Time.timeScale = 1f;
         panel.SetActive(false);
     }
 
