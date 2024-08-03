@@ -15,7 +15,10 @@ public class PlayerShoot : MonoBehaviour
         leftWave.SetActive(false);
         rightWave.SetActive(false);
         StartCoroutine(shootWaves());
+
     }
+
+
     // Basically a function that uses frames to create an attack
     IEnumerator shootWaves()
     {
