@@ -24,10 +24,17 @@ public class EnemyHealth : MonoBehaviour
             float playerDamage = playerShoot.playerDamage;
             // Subtracts enemy health
             health -= playerDamage;
-            if (health <= 0)
-            {
-                killEnemy();
-            }
+        }
+        else if (objectLayer == LayerMask.NameToLayer("Rocket"))
+        {
+            var rocketDamage = GameObject.FindWithTag("Rocket").GetComponent<TargetRandomEnemy>().rocketDamage;
+            health -= rocketDamage;
+            Destroy(collision.gameObject);
+        }
+
+        if (health <= 0)
+        {
+            killEnemy();
         }
     }
 

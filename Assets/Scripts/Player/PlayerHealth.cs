@@ -27,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isDead == true) { return; }
         isInvincible = true;
-        healthBar.updateBar();
         Invoke(nameof(removeInvincibility), secondsInvincible);
         if (plushieHealth > 0.1f)
         {
@@ -35,12 +34,16 @@ public class PlayerHealth : MonoBehaviour
             plushieBar.updateBar();
             plushieHealth -= damage;
             Math.Round(plushieHealth);
+            plushieBar.updateBar();
+
         }
         else
         {
             plushie.plushieRenderer.enabled = false;
             fullPlushieBar.SetActive(false);
             currentHealth -= damage;
+            healthBar.updateBar();
+
             if (currentHealth < 0)
             {
                 killPlayer();

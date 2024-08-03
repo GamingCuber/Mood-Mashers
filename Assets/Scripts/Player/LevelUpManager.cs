@@ -17,6 +17,7 @@ public class LevelUpManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlushiePlayerFollow plushie;
     public GameObject plushieBar;
+    public GameObject homingRocket;
 
     public enum LevelUpgrades
     {
@@ -47,6 +48,7 @@ public class LevelUpManager : MonoBehaviour
                 healthUp();
                 break;
             case LevelUpgrades.HomingUp:
+                homingUp();
                 break;
             case LevelUpgrades.PlushieUp:
                 plushieUp();
@@ -99,7 +101,7 @@ public class LevelUpManager : MonoBehaviour
 
     private void homingUp()
     {
-
+        Instantiate(homingRocket, playerMovement.transform);
     }
 
     private void scaleUp(float scaling, GameObject gameObject)

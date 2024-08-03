@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Attack
+  - Rocket
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Attack
   - Experience
   - Backgroud
-  - 
+  - Rocket
   - 
   - 
   - 
