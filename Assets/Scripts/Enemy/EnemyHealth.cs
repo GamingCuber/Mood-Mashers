@@ -22,13 +22,20 @@ public class EnemyHealth : MonoBehaviour
         // Checks if the Enemy gets hit by an attack by the player
         if (objectLayer == LayerMask.NameToLayer("Attack"))
         {
-           
+
             // Subtracts enemy health
             health -= playerDamage;
-            if (health <= 0)
-            {
-                killEnemy();
-            }
+        }
+        else if (objectLayer == LayerMask.NameToLayer("Rocket"))
+        {
+            var rocketDamage = GameObject.FindWithTag("Rocket").GetComponent<TargetRandomEnemy>().rocketDamage;
+            health -= rocketDamage;
+            Destroy(collision.gameObject);
+        }
+
+        if (health <= 0)
+        {
+            killEnemy();
         }
     }
 
