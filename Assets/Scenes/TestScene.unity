@@ -431,6 +431,7 @@ MonoBehaviour:
   playerMovement: {fileID: 1712089456}
   plushie: {fileID: 982838654}
   plushieBar: {fileID: 1099586453}
+  plushieBarManager: {fileID: 1837989513}
   homingRocket: {fileID: 5627933011759697882, guid: b5e68077153ce3e939ac1d78d8f7f663, type: 3}
 --- !u!1 &111675815
 GameObject:
@@ -9550,7 +9551,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045216378}
-  - component: {fileID: 2045216377}
   - component: {fileID: 2045216379}
   - component: {fileID: 2045216380}
   m_Layer: 0
@@ -9560,18 +9560,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2045216377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045216376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5865cf0bf026f049c8a51263fdba2b7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2045216378
 Transform:
   m_ObjectHideFlags: 0
@@ -9623,7 +9611,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f69ad408b5833585baa45087cd0925c9, type: 3}
   - {fileID: 21300000, guid: 8e459b1746b29e0b08f7be2e137c73ae, type: 3}
   - {fileID: 21300000, guid: b80d29156d369d8a2bc1571122f5f254, type: 3}
-  - {fileID: 21300000, guid: 489cef28eddca51eb8bc57858695c976, type: 3}
   upgradeTexts:
   - Increase Attack Strength
   - Increase Hammer Size
@@ -9632,7 +9619,6 @@ MonoBehaviour:
   - Launch Homing Attack
   - Have A Plushie Follow
   - Increase Movement Speed
-  - Have An Orb Swirl Around You
   firstButtonText: {fileID: 1524161350}
   secondButtonText: {fileID: 1329273995}
   thirdButtonText: {fileID: 1148317165}
