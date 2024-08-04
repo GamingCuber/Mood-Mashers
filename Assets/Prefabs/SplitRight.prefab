@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 686127521972100250}
   - component: {fileID: 911662988560785681}
   - component: {fileID: 5138714118213217865}
+  - component: {fileID: 3183879975715637419}
   m_Layer: 7
   m_Name: SplitRight
   m_TagString: Enemy
@@ -200,3 +201,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+--- !u!114 &3183879975715637419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497973180776560642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92554864de6dfa0d688fcc747946ce13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splitCollider: {fileID: 3389815651664409651}
+  secondsOfInvincibility: 1
