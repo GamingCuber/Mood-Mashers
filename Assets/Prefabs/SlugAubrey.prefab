@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XP: {fileID: 2979400687923447167, guid: 6db3296db55795c96ad7cc5ae1ed8035, type: 3}
+  XPDropped: 0
 --- !u!114 &1115375371109187695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedWhenPassive: 0.25
   speedWhenAngry: 4.5
-  secondsUntilAngry: 5
+  secondsUntilAngry: 10
 --- !u!114 &1634457329042836719
 MonoBehaviour:
   m_ObjectHideFlags: 0

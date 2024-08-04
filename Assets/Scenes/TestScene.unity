@@ -5029,7 +5029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea961d47673983c53abc369cab932cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 7.5
   playerBody: {fileID: 1712089458}
   pauseMenu: {fileID: 2045216379}
 --- !u!212 &1712089457
@@ -5186,12 +5186,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8c0b6242800ac9194e90f2f7bf8759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrades: {fileID: 0}
   leftWave: {fileID: 519390558}
   rightWave: {fileID: 144938675}
   playerDamage: 10000
   secondsPerShoot: 3
-  frames: 240
+  frames: 15
 --- !u!114 &1712089462
 MonoBehaviour:
   m_ObjectHideFlags: 0
