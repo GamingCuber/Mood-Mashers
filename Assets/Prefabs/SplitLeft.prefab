@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1331599804738155331}
   - component: {fileID: 3389815651664409651}
-  - component: {fileID: 7938199288887872190}
   - component: {fileID: 3846834981551342867}
   - component: {fileID: 911662988560785681}
   - component: {fileID: 4347142538444620454}
   - component: {fileID: 4804136473628096785}
   - component: {fileID: 686127521972100250}
   - component: {fileID: 5138714118213217865}
+  - component: {fileID: 5871169378270737987}
   m_Layer: 7
   m_Name: SplitLeft
   m_TagString: Enemy
@@ -74,33 +74,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!50 &7938199288887872190
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4497973180776560642}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!95 &3846834981551342867
 Animator:
   serializedVersion: 5
@@ -214,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XP: {fileID: 2979400687923447167, guid: 6db3296db55795c96ad7cc5ae1ed8035, type: 3}
+  XPDropped: 0
 --- !u!114 &5138714118213217865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,3 +201,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+--- !u!114 &5871169378270737987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497973180776560642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92554864de6dfa0d688fcc747946ce13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splitCollider: {fileID: 3389815651664409651}
+  secondsOfInvincibility: 1

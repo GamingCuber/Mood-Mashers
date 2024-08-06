@@ -10,7 +10,7 @@ public class PlushieBarManager : MonoBehaviour
 
     void Start()
     {
-        this.enabled = false;
+        enabled = false;
     }
 
     public void updateBar()

@@ -6,14 +6,30 @@ public class EnemyHealth : MonoBehaviour
 {
 
     public float health = 2f;
-    private PlayerShoot playerShoot;
     private float playerDamage;
+    private Animator enemyAnimator;
+    private Collider2D enemyCollider;
     public EnemyDropXP enemyXPManager;
 
     void Start()
     {
         // This line gets the player object, gets the PlayerShoot script, and then accesses the playerDamage public field
         playerDamage = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>().playerDamage;
+
+        enemyAnimator = gameObject.GetComponent<Animator>();
+        enemyCollider = gameObject.GetComponent<Collider2D>();
+    }
+
+    public void damageEnemy(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            enemyCollider.enabled = false;
+            enemyXPManager.dropXP();
+            enemyAnimator.SetTrigger("isDead");
+            Invoke(nameof(killEnemy), 2f);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -35,13 +51,15 @@ public class EnemyHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            killEnemy();
+            enemyCollider.enabled = false;
+            enemyXPManager.dropXP();
+            enemyAnimator.SetTrigger("isDead");
+            Invoke(nameof(killEnemy), 2f);
         }
     }
 
     private void killEnemy()
     {
-        enemyXPManager.dropXP();
         Destroy(gameObject);
     }
 }

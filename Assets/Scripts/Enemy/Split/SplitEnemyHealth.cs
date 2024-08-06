@@ -10,11 +10,21 @@ public class SplitEnemyHealth : MonoBehaviour
     [SerializeField] private GameObject leftEnemy;
     [SerializeField] private GameObject rightEnemy;
     [SerializeField] private float distanceFromCompEnemy;
+    [SerializeField] private Animator splitAnimator;
 
     void Start()
     {
         // This line gets the player object, gets the PlayerShoot script, and then accesses the playerDamage public field
         playerDamage = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>().playerDamage;
+    }
+
+    public void damageSplit(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            killEnemy();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -40,6 +50,12 @@ public class SplitEnemyHealth : MonoBehaviour
     }
 
     private void killEnemy()
+    {
+        splitAnimator.SetTrigger("isDead");
+        Invoke(nameof(destroy), 0.2f);
+    }
+
+    private void destroy()
     {
         Vector3 offsetVector = new Vector2(distanceFromCompEnemy, 0);
         Instantiate(leftEnemy, transform.position - offsetVector, Quaternion.identity);

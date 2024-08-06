@@ -1,15 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerSuper : MonoBehaviour
 {
+    [SerializeField] private float superDamage;
     public float secondsPerSuper = 5f;
+    private bool canDoSuper = false;
     void Start()
     {
-        InvokeRepeating(nameof(clearEnemies), 0f, secondsPerSuper);
+        Invoke(nameof(makeSuperAvailable), secondsPerSuper);
     }
 
+    void Update()
+    {
+        if (canDoSuper)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                clearEnemies();
+            }
+        }
+    }
+    private void makeSuperAvailable()
+    {
+        canDoSuper = true;
+    }
     private void clearEnemies()
     {
         // Gets all things on screen
@@ -28,8 +45,17 @@ public class PlayerSuper : MonoBehaviour
         // Goes through the enemies list and destroys all of them
         for (var i = 0; i < enemiesList.Count; i++)
         {
-            Destroy(enemiesList[i]);
+            var currentObject = enemiesList[i];
+            if (currentObject.name.Contains("SplitComp"))
+            {
+                currentObject.GetComponent<SplitEnemyHealth>().damageSplit(superDamage);
+            }
+            else
+            {
+                currentObject.GetComponent<EnemyHealth>().damageEnemy(superDamage);
+            }
         }
-
+        canDoSuper = false;
+        Invoke(nameof(makeSuperAvailable), secondsPerSuper);
     }
 }
