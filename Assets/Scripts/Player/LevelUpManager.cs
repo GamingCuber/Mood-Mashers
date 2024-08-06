@@ -11,6 +11,8 @@ public class LevelUpManager : MonoBehaviour
     [SerializeField] private float speedScaleUp = 1.5f;
     [SerializeField] private float hasteScaleUp = 0.75f;
     [SerializeField] private float hammerScaleUp = 1.15f;
+    [SerializeField] private int hammerMaxScale = 5;
+    [SerializeField] private int hammerCurrentScale = 1;
 
     public PlayerHealth playerHealth;
     public PlayerShoot playerShoot;
@@ -31,6 +33,8 @@ public class LevelUpManager : MonoBehaviour
         SpeedUp,
         None
     }
+    // Storing Complete Level Upgrades
+    public List<LevelUpgrades> completeLevelUpgrades = new List<LevelUpgrades>();
     public void chooseLevelUp(LevelUpgrades upgrade)
     {
         switch (upgrade)
@@ -80,6 +84,12 @@ public class LevelUpManager : MonoBehaviour
 
     private void hammerUp()
     {
+        hammerCurrentScale++;
+        if(hammerCurrentScale >= hammerMaxScale)
+        {
+            hammerCurrentScale = hammerMaxScale;
+            return;
+        }
         scaleUp(hammerScaleUp, playerShoot.leftWave);
         scaleUp(hammerScaleUp, playerShoot.rightWave);
     }

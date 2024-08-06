@@ -50,9 +50,10 @@ public class UpgradePanelManager : MonoBehaviour
         var numberOfUpgrades = Enum.GetValues(typeof(LevelUpManager.LevelUpgrades)).Length;
         for (var i = 0; i < numberOfUpgrades - 1; i++)
         {
+            // Add Logic that checks if the value is not apart of the completed upgrades list 8/1/2024
             indexes.Add(i);
         }
-        var random = new System.Random();
+        var random = new System.Random();   
         // Just shuffles the index list so the order is random
         indexes = indexes.OrderBy(i => random.Next()).ToList();
         return indexes.GetRange(0, 3);
