@@ -5268,7 +5268,7 @@ MonoBehaviour:
   rightWave: {fileID: 144938675}
   playerDamage: 5
   secondsPerShoot: 5
-  frames: 240
+  secondsOut: 2
 --- !u!114 &1712089462
 MonoBehaviour:
   m_ObjectHideFlags: 0

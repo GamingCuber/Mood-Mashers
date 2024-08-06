@@ -8,7 +8,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject rightWave;
     public float playerDamage = 1.0f;
     public float secondsPerShoot = 2.0f;
-    public float frames = 20.0f;
+    public float secondsOut = 20.0f;
 
     void Start()
     {
@@ -29,10 +29,7 @@ public class PlayerShoot : MonoBehaviour
             leftWave.SetActive(true);
             rightWave.SetActive(true);
 
-            for (var i = 0; i < frames; i++)
-            {
-                yield return new WaitForEndOfFrame();
-            }
+            yield return new WaitForSeconds(secondsOut);
 
             leftWave.SetActive(false);
             rightWave.SetActive(false);
