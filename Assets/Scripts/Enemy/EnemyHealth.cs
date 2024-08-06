@@ -20,6 +20,18 @@ public class EnemyHealth : MonoBehaviour
         enemyCollider = gameObject.GetComponent<Collider2D>();
     }
 
+    public void damageEnemy(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            enemyCollider.enabled = false;
+            enemyXPManager.dropXP();
+            enemyAnimator.SetTrigger("isDead");
+            Invoke(nameof(killEnemy), 2f);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         LayerMask objectLayer = collision.gameObject.layer;

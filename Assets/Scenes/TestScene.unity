@@ -5335,6 +5335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47852fc46fabf7205bcbff45b0c1e4a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  superDamage: 5
   secondsPerSuper: 40
 --- !u!95 &1712089466
 Animator:

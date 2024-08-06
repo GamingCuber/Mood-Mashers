@@ -18,6 +18,15 @@ public class SplitEnemyHealth : MonoBehaviour
         playerDamage = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>().playerDamage;
     }
 
+    public void damageSplit(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            killEnemy();
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         LayerMask objectLayer = collision.gameObject.layer;
