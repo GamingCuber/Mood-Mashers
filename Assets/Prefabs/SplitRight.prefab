@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 911662988560785681}
   - component: {fileID: 5138714118213217865}
   - component: {fileID: 3183879975715637419}
+  - component: {fileID: 3677404880617392216}
   m_Layer: 7
   m_Name: SplitRight
   m_TagString: Enemy
@@ -215,3 +216,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splitCollider: {fileID: 3389815651664409651}
   secondsOfInvincibility: 1
+--- !u!50 &3677404880617392216
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497973180776560642}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
