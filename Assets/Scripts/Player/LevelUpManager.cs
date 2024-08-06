@@ -17,6 +17,7 @@ public class LevelUpManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlushiePlayerFollow plushie;
     public GameObject plushieBar;
+    public PlushieBarManager plushieBarManager;
     public GameObject homingRocket;
 
     public enum LevelUpgrades
@@ -28,7 +29,6 @@ public class LevelUpManager : MonoBehaviour
         HomingUp,
         PlushieUp,
         SpeedUp,
-        SwirlUp,
         None
     }
     public void chooseLevelUp(LevelUpgrades upgrade)
@@ -55,9 +55,6 @@ public class LevelUpManager : MonoBehaviour
                 break;
             case LevelUpgrades.SpeedUp:
                 speedUp();
-                break;
-            case LevelUpgrades.SwirlUp:
-                swirl();
                 break;
         }
     }
@@ -87,16 +84,12 @@ public class LevelUpManager : MonoBehaviour
         scaleUp(hammerScaleUp, playerShoot.rightWave);
     }
 
-    private void swirl()
-    {
-
-    }
-
     private void plushieUp()
     {
         playerHealth.plushieHealth = 20f;
         plushie.plushieRenderer.enabled = true;
         plushieBar.SetActive(true);
+        plushieBarManager.updateBar();
     }
 
     private void homingUp()

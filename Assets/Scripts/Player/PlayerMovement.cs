@@ -20,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!pauseMenu.isPaused)
         {
+            if (movementVector.magnitude > 1)
+            {
+                movementVector = movementVector.normalized;
+            }
             playerBody.MovePosition(playerBody.position + movementSpeed * Time.fixedDeltaTime * movementVector);
         }
     }

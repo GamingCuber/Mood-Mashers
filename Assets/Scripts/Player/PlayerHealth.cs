@@ -28,19 +28,23 @@ public class PlayerHealth : MonoBehaviour
         if (isDead == true) { return; }
         isInvincible = true;
         Invoke(nameof(removeInvincibility), secondsInvincible);
+        // Checks whether plushie health is still there
         if (plushieHealth > 0.1f)
         {
 
-            plushieBar.updateBar();
             plushieHealth -= damage;
             Math.Round(plushieHealth);
             plushieBar.updateBar();
-
+            // Checks if after taking plushie damage, whether plushie health is gone or not
+            if (plushieHealth <= 0.1f)
+            {
+                fullPlushieBar.SetActive(false);
+            }
         }
+        // When there's no plushie health, subtracts from player health
         else
         {
             plushie.plushieRenderer.enabled = false;
-            fullPlushieBar.SetActive(false);
             currentHealth -= damage;
             healthBar.updateBar();
 
