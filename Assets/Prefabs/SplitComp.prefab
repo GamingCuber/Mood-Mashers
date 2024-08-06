@@ -187,3 +187,4 @@ MonoBehaviour:
   leftEnemy: {fileID: 4497973180776560642, guid: 52bbfd260ac3ba507bdc41e6e01bd682, type: 3}
   rightEnemy: {fileID: 4497973180776560642, guid: fccca4209ce46fdbca006f28b189ecb6, type: 3}
   distanceFromCompEnemy: 0.5
+  splitAnimator: {fileID: 3846834981551342867}

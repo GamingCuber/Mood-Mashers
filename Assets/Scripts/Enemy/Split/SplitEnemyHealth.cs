@@ -10,6 +10,7 @@ public class SplitEnemyHealth : MonoBehaviour
     [SerializeField] private GameObject leftEnemy;
     [SerializeField] private GameObject rightEnemy;
     [SerializeField] private float distanceFromCompEnemy;
+    [SerializeField] private Animator splitAnimator;
 
     void Start()
     {
@@ -40,6 +41,12 @@ public class SplitEnemyHealth : MonoBehaviour
     }
 
     private void killEnemy()
+    {
+        splitAnimator.SetTrigger("isDead");
+        Invoke(nameof(destroy), 0.2f);
+    }
+
+    private void destroy()
     {
         Vector3 offsetVector = new Vector2(distanceFromCompEnemy, 0);
         Instantiate(leftEnemy, transform.position - offsetVector, Quaternion.identity);
