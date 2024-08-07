@@ -13,6 +13,7 @@ public class LevelUpManager : MonoBehaviour
     [SerializeField] private float hammerScaleUp = 1.15f;
     [SerializeField] private int hammerMaxScale = 5;
     [SerializeField] private int hammerCurrentScale = 1;
+    public HealthBarManager playerHealthBar;
 
     public PlayerHealth playerHealth;
     public PlayerShoot playerShoot;
@@ -65,6 +66,7 @@ public class LevelUpManager : MonoBehaviour
     private void healthUp()
     {
         playerHealth.maxHealth *= healthScaleUp;
+        playerHealthBar.updateBar();
     }
 
     private void attackUp()
@@ -85,7 +87,7 @@ public class LevelUpManager : MonoBehaviour
     private void hammerUp()
     {
         hammerCurrentScale++;
-        if(hammerCurrentScale >= hammerMaxScale)
+        if (hammerCurrentScale >= hammerMaxScale)
         {
             hammerCurrentScale = hammerMaxScale;
             return;

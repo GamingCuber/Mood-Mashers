@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerSuper : MonoBehaviour
 {
     [SerializeField] private float superDamage;
+    [SerializeField] private SuperBarManager superBarManager;
+    [SerializeField] private TMP_Text superBarText;
     public float secondsPerSuper = 5f;
     private bool canDoSuper = false;
     void Start()
     {
         Invoke(nameof(makeSuperAvailable), secondsPerSuper);
+        superBarText.enabled = false;
     }
 
     void Update()
@@ -56,6 +60,8 @@ public class PlayerSuper : MonoBehaviour
             }
         }
         canDoSuper = false;
+        superBarManager.resetBar();
+        superBarText.enabled = false;
         Invoke(nameof(makeSuperAvailable), secondsPerSuper);
     }
 }
