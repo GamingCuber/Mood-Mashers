@@ -5316,7 +5316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea961d47673983c53abc369cab932cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3.5
+  movementSpeed: 4.5
   playerBody: {fileID: 1712089458}
   pauseMenu: {fileID: 2045216379}
 --- !u!212 &1712089457
@@ -5491,7 +5491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 1000
+  maxHealth: 150
   plushieHealth: 20
   maxPlushieHealth: 20
   isInvincible: 0
@@ -5841,8 +5841,8 @@ MonoBehaviour:
   player: {fileID: 1712089456}
   enemy: {fileID: 4497973180776560642, guid: 3ef3fad9d3ba84f7f9e5c205e38cc418, type: 3}
   distanceFromPlayer: 20
-  secondsPerSpawn: 2
-  secondsBeforeSpawn: 0
+  secondsPerSpawn: 8
+  secondsBeforeSpawn: 180
 --- !u!4 &1770768663
 Transform:
   m_ObjectHideFlags: 0
@@ -9621,8 +9621,8 @@ MonoBehaviour:
   player: {fileID: 1712089456}
   enemy: {fileID: 4497973180776560642, guid: 844eede15029222d7a32565a3788fb82, type: 3}
   distanceFromPlayer: 20
-  secondsPerSpawn: 2
-  secondsBeforeSpawn: 0
+  secondsPerSpawn: 5
+  secondsBeforeSpawn: 90
 --- !u!4 &1797814087
 Transform:
   m_ObjectHideFlags: 0
