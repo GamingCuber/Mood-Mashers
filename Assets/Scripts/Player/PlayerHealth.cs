@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float secondsInvincible;
     [SerializeField] private Collider2D PlayerCollider;
     [SerializeField] private HealthBarManager healthBar;
+    [SerializeField] private Animator playerAnimator;
     private bool isDead;
     void Start()
     {
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         if (isDead == true) { return; }
         isInvincible = true;
         Invoke(nameof(removeInvincibility), secondsInvincible);
+        playerAnimator.SetTrigger("isHurt");
         // Checks whether plushie health is still there
         if (plushieHealth > 0.1f)
         {

@@ -5295,6 +5295,7 @@ MonoBehaviour:
   secondsInvincible: 2
   PlayerCollider: {fileID: 1712089459}
   healthBar: {fileID: 1259412068}
+  playerAnimator: {fileID: 1712089466}
 --- !u!114 &1712089463
 MonoBehaviour:
   m_ObjectHideFlags: 0
