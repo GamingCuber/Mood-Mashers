@@ -427,6 +427,8 @@ MonoBehaviour:
   speedScaleUp: 1.5
   hasteScaleUp: 0.75
   hammerScaleUp: 1.15
+  hammerMaxScale: 5
+  hammerCurrentScale: 1
   playerHealth: {fileID: 1712089462}
   playerShoot: {fileID: 1712089461}
   playerMovement: {fileID: 1712089456}
@@ -434,6 +436,7 @@ MonoBehaviour:
   plushieBar: {fileID: 1099586453}
   plushieBarManager: {fileID: 1837989513}
   homingRocket: {fileID: 5627933011759697882, guid: b5e68077153ce3e939ac1d78d8f7f663, type: 3}
+  completeLevelUpgrades: 
 --- !u!1 &111675815
 GameObject:
   m_ObjectHideFlags: 0
@@ -5267,8 +5270,8 @@ MonoBehaviour:
   leftWave: {fileID: 519390558}
   rightWave: {fileID: 144938675}
   playerDamage: 5
-  secondsPerShoot: 5
-  secondsOut: 2
+  secondsPerShoot: 3
+  secondsOut: 0.5
 --- !u!114 &1712089462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5321,6 +5324,7 @@ MonoBehaviour:
   amountUntilNextLevel: 3
   currentAmount: 0
   currentLevel: 1
+  levelScaling: 1.1
   XPBar: {fileID: 1498655053}
   UpgradePanel: {fileID: 2045216380}
 --- !u!114 &1712089465
@@ -8621,7 +8625,7 @@ CompositeCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

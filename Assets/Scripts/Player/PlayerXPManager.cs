@@ -9,6 +9,7 @@ public class PlayerXPManager : MonoBehaviour
     public float amountUntilNextLevel = 20;
     public float currentAmount = 0;
     public int currentLevel = 1;
+    [SerializeField] public float levelScaling = 1.1f;
 
     [SerializeField] private XPBarManager XPBar;
     [SerializeField] private UpgradePanelManager UpgradePanel;
@@ -33,7 +34,7 @@ public class PlayerXPManager : MonoBehaviour
         UpgradePanel.OpenPanel();
         currentAmount = 0;
         currentLevel++;
-        amountUntilNextLevel *= 1.1f;
+        amountUntilNextLevel *= levelScaling;
         XPBar.SetLevelText(currentLevel);
     }
 
