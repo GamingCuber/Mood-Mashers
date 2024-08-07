@@ -5269,7 +5269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftWave: {fileID: 519390558}
   rightWave: {fileID: 144938675}
-  playerDamage: 5
+  playerDamage: 1
   secondsPerShoot: 3
   secondsOut: 0.5
 --- !u!114 &1712089462
@@ -5322,10 +5322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6707888e8a1f6defe8f42b2ccfc07081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountUntilNextLevel: 3
+  amountUntilNextLevel: 15
   currentAmount: 0
   currentLevel: 1
-  levelScaling: 1.1
+  levelScaling: 2
   XPBar: {fileID: 1498655053}
   UpgradePanel: {fileID: 2045216380}
 --- !u!114 &1712089465
