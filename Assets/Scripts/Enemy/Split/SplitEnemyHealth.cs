@@ -30,6 +30,7 @@ public class SplitEnemyHealth : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         LayerMask objectLayer = collision.gameObject.layer;
+        splitAnimator.SetTrigger("isHurt");
         // Checks if the Enemy gets hit by an attack by the player
         if (objectLayer == LayerMask.NameToLayer("Attack"))
         {

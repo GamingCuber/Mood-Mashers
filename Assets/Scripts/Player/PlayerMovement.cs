@@ -8,12 +8,14 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D playerBody;
     private Vector2 movementVector;
     private Animator playerAnimator;
+    private SpriteRenderer playerRenderer;
     public PauseMenuManager pauseMenu;
 
 
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
+        playerRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -28,6 +30,14 @@ public class PlayerMovement : MonoBehaviour
         // If the player is moving, then plays walking animation
         else
         {
+            if (movementVector.x >= 0)
+            {
+                playerRenderer.flipX = true;
+            }
+            else
+            {
+                playerRenderer.flipX = false;
+            }
             playerAnimator.SetBool("isMoving", true);
         }
     }
