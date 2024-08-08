@@ -5424,6 +5424,7 @@ GameObject:
   - component: {fileID: 1712089466}
   - component: {fileID: 1712089467}
   - component: {fileID: 1712089468}
+  - component: {fileID: 1712089469}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5629,6 +5630,7 @@ MonoBehaviour:
   PlayerCollider: {fileID: 1712089459}
   healthBar: {fileID: 1259412068}
   playerAnimator: {fileID: 1712089466}
+  playerInvincibility: {fileID: 1712089469}
 --- !u!114 &1712089463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5727,6 +5729,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 128254911}
   weaponParent: {fileID: 252296813}
+--- !u!114 &1712089469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712089455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d56a7ae5746f0d6e8fe2ede9bef1a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flickerAmount: 25
+  playerSprite: {fileID: 1712089457}
+  playerHealth: {fileID: 1712089462}
 --- !u!1 &1728585853
 GameObject:
   m_ObjectHideFlags: 0
