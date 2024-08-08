@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 3565919543300737249}
   - component: {fileID: 5771718798635368493}
   - component: {fileID: 5363399208494233101}
-  - component: {fileID: 1952181510517131144}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Rocket
   m_TagString: Rocket
   m_Icon: {fileID: 0}
@@ -29,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 5627933011759697882}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0.47, y: -0.32, z: 0}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -126,41 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c751f3e793ca52e895ce7c210710613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homingSpeed: 5
+  homingSpeed: 2
+  distanceFromPlayer: 3.5
   rocketBody: {fileID: 5771718798635368493}
-  rocketDamage: 20
---- !u!70 &1952181510517131144
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5627933011759697882}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.75, y: 1.5}
-  m_Direction: 0
+  rocketExplosion: {fileID: 252165524438117367, guid: aaef28f6d0b9f20e0928b13bda947a6d, type: 3}

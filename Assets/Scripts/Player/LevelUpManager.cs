@@ -106,7 +106,8 @@ public class LevelUpManager : MonoBehaviour
 
     private void homingUp()
     {
-        Instantiate(homingRocket, playerMovement.transform);
+        var rocketInstance = Instantiate(homingRocket, playerMovement.transform.position, Quaternion.identity);
+        rocketInstance.GetComponent<TargetRandomEnemy>().getLocation();
     }
 
     private void scaleUp(float scaling, GameObject gameObject)

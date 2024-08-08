@@ -45,9 +45,8 @@ public class EnemyHealth : MonoBehaviour
         }
         else if (objectLayer == LayerMask.NameToLayer("Rocket"))
         {
-            var rocketDamage = GameObject.FindWithTag("Rocket").GetComponent<TargetRandomEnemy>().rocketDamage;
+            var rocketDamage = GameObject.FindWithTag("RocketExplosion").GetComponent<RocketExplosionDamage>().rocketDamage;
             health -= rocketDamage;
-            Destroy(collision.gameObject);
         }
 
         if (health <= 0)

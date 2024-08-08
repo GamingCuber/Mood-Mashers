@@ -9,11 +9,12 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject superBar;
     public GameObject pauseMenu;
     public bool isPaused = false;
-    
+
 
     void Start()
     {
         pauseMenu.SetActive(false);
+        resumeGame();
     }
 
     // Update is called once per frame
