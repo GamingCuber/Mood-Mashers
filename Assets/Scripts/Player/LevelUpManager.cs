@@ -13,6 +13,7 @@ public class LevelUpManager : MonoBehaviour
     [SerializeField] private float hammerScaleUp = 1.15f;
     [SerializeField] private int hammerMaxScale = 5;
     [SerializeField] private int hammerCurrentScale = 1;
+    [SerializeField] private float healthRecovery = 20f;
     public HealthBarManager playerHealthBar;
 
     public PlayerHealth playerHealth;
@@ -32,6 +33,7 @@ public class LevelUpManager : MonoBehaviour
         HomingUp,
         PlushieUp,
         SpeedUp,
+        RecoveryUp,
         None
     }
     // Storing Complete Level Upgrades
@@ -61,12 +63,26 @@ public class LevelUpManager : MonoBehaviour
             case LevelUpgrades.SpeedUp:
                 speedUp();
                 break;
+            case LevelUpgrades.RecoveryUp:
+                recoveryUp();
+                break;
         }
     }
     private void healthUp()
     {
         playerHealth.maxHealth *= healthScaleUp;
         playerHealthBar.updateBar();
+    }
+
+    private void recoveryUp()
+    {
+        var newHealth = playerHealth.currentHealth + healthRecovery;
+        if (newHealth >= playerHealth.maxHealth)
+        {
+            newHealth = playerHealth.maxHealth;
+        }
+        playerHealth.currentHealth = newHealth;
+
     }
 
     private void attackUp()
