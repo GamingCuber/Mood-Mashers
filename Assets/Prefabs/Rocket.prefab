@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3565919543300737249}
   - component: {fileID: 5771718798635368493}
   - component: {fileID: 5363399208494233101}
+  - component: {fileID: 2870480309970844019}
+  - component: {fileID: 6106932713087235328}
   m_Layer: 5
   m_Name: Rocket
   m_TagString: Rocket
@@ -125,7 +127,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c751f3e793ca52e895ce7c210710613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homingSpeed: 2
+  homingSpeed: 3
   distanceFromPlayer: 3.5
   rocketBody: {fileID: 5771718798635368493}
   rocketExplosion: {fileID: 252165524438117367, guid: aaef28f6d0b9f20e0928b13bda947a6d, type: 3}
+--- !u!111 &2870480309970844019
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627933011759697882}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3f32b6bab5323054aa5530039caa73a9, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &6106932713087235328
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627933011759697882}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f768b6fec47c4b24da02694508e46373, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

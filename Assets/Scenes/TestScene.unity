@@ -5607,6 +5607,7 @@ MonoBehaviour:
   playerDamage: 1
   secondsPerShoot: 3
   secondsOut: 0.5
+  playerAnimator: {fileID: 1712089466}
 --- !u!114 &1712089462
 MonoBehaviour:
   m_ObjectHideFlags: 0
