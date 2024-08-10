@@ -9,6 +9,7 @@ public class PlayerShoot : MonoBehaviour
     public float playerDamage = 1.0f;
     public float secondsPerShoot = 2.0f;
     public float secondsOut = 20.0f;
+    [SerializeField] private Animator playerAnimator;
 
     void Start()
     {
@@ -22,15 +23,18 @@ public class PlayerShoot : MonoBehaviour
     // Basically a function that uses frames to create an attack
     IEnumerator shootWaves()
     {
+        
         while (true)
         {
+            
             yield return new WaitForSeconds(secondsPerShoot);
-
+            playerAnimator.SetBool("isAttacking", true);
             leftWave.SetActive(true);
             rightWave.SetActive(true);
+            
 
             yield return new WaitForSeconds(secondsOut);
-
+            playerAnimator.SetBool("isAttacking", false);
             leftWave.SetActive(false);
             rightWave.SetActive(false);
         }
