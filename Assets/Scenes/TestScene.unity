@@ -945,9 +945,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.23921569, g: 0.78431374, b: 0.28627452, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.08627451, g: 0.8862745, b: 0.15294118, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3098,9 +3098,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.23921569, g: 0.78431374, b: 0.28627452, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.08627451, g: 0.8862745, b: 0.15294118, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5669,7 +5669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6707888e8a1f6defe8f42b2ccfc07081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountUntilNextLevel: 1
+  amountUntilNextLevel: 10
   currentAmount: 0
   currentLevel: 1
   levelScaling: 2
@@ -5813,7 +5813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Space!
+  m_text: Press Space/B!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6e5ec1a5c60c90188edb37448fde4c8, type: 2}
   m_sharedMaterial: {fileID: -5228680760553251061, guid: f6e5ec1a5c60c90188edb37448fde4c8, type: 2}
@@ -10172,6 +10172,7 @@ MonoBehaviour:
   superBar: {fileID: 790422340}
   pauseMenu: {fileID: 1676959453}
   isPaused: 0
+  pauseMenuFirst: {fileID: 0}
 --- !u!114 &2045216380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10310,9 +10311,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.23921569, g: 0.78431374, b: 0.28627452, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.08627451, g: 0.8862745, b: 0.15294118, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
