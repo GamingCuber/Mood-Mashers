@@ -19,10 +19,11 @@ public class LevelUpManager : MonoBehaviour
     public PlayerHealth playerHealth;
     public PlayerShoot playerShoot;
     public PlayerMovement playerMovement;
+    public PlayerRocketShooter playerRocketManager;
     public PlushiePlayerFollow plushie;
     public GameObject plushieBar;
     public PlushieBarManager plushieBarManager;
-    public GameObject homingRocket;
+    public UpgradePanelManager upgradePanelManager;
 
     public enum LevelUpgrades
     {
@@ -30,7 +31,7 @@ public class LevelUpManager : MonoBehaviour
         HammerUp,
         HasteUp,
         HealthUp,
-        HomingUp,
+        RocketUp,
         PlushieUp,
         SpeedUp,
         RecoveryUp,
@@ -54,8 +55,8 @@ public class LevelUpManager : MonoBehaviour
             case LevelUpgrades.HealthUp:
                 healthUp();
                 break;
-            case LevelUpgrades.HomingUp:
-                homingUp();
+            case LevelUpgrades.RocketUp:
+                rocketUp();
                 break;
             case LevelUpgrades.PlushieUp:
                 plushieUp();
@@ -120,10 +121,10 @@ public class LevelUpManager : MonoBehaviour
         plushieBarManager.updateBar();
     }
 
-    private void homingUp()
+    private void rocketUp()
     {
-        var rocketInstance = Instantiate(homingRocket, playerMovement.transform.position, Quaternion.identity);
-        rocketInstance.GetComponent<TargetRandomEnemy>().getLocation();
+        playerRocketManager.startShootingRockets();
+        upgradePanelManager.choseRocket = true;
     }
 
     private void scaleUp(float scaling, GameObject gameObject)

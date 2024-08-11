@@ -433,10 +433,11 @@ MonoBehaviour:
   playerHealth: {fileID: 1712089462}
   playerShoot: {fileID: 1712089461}
   playerMovement: {fileID: 1712089456}
+  playerRocketManager: {fileID: 1712089470}
   plushie: {fileID: 982838654}
   plushieBar: {fileID: 1099586453}
   plushieBarManager: {fileID: 1837989513}
-  homingRocket: {fileID: 5627933011759697882, guid: b5e68077153ce3e939ac1d78d8f7f663, type: 3}
+  upgradePanelManager: {fileID: 2045216380}
   completeLevelUpgrades: 
 --- !u!1 &111675815
 GameObject:
@@ -2324,7 +2325,7 @@ GameObject:
   - component: {fileID: 737980513}
   - component: {fileID: 737980512}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5432,10 +5433,10 @@ GameObject:
   - component: {fileID: 1712089463}
   - component: {fileID: 1712089464}
   - component: {fileID: 1712089465}
-  - component: {fileID: 1712089466}
-  - component: {fileID: 1712089467}
   - component: {fileID: 1712089468}
   - component: {fileID: 1712089469}
+  - component: {fileID: 1712089470}
+  - component: {fileID: 1712089466}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5618,6 +5619,7 @@ MonoBehaviour:
   secondsPerShoot: 3
   secondsOut: 0.5
   playerAnimator: {fileID: 1712089466}
+  timesOut: 3
 --- !u!114 &1712089462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5638,7 +5640,7 @@ MonoBehaviour:
   plushie: {fileID: 982838654}
   plushieBar: {fileID: 1837989513}
   fullPlushieBar: {fileID: 1099586453}
-  secondsInvincible: 2
+  secondsInvincible: 1
   PlayerCollider: {fileID: 1712089459}
   healthBar: {fileID: 1259412068}
   playerAnimator: {fileID: 1712089466}
@@ -5712,21 +5714,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &1712089467
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712089455}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d34957e68659aee4fb9c3f9ffae2b225, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &1712089468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5756,6 +5743,20 @@ MonoBehaviour:
   flickerAmount: 25
   playerSprite: {fileID: 1712089457}
   playerHealth: {fileID: 1712089462}
+--- !u!114 &1712089470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712089455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f902d7ace8b3eb619a202bd0ccf781b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocket: {fileID: 5627933011759697882, guid: b5e68077153ce3e939ac1d78d8f7f663, type: 3}
+  secondsPerShoot: 10
 --- !u!1 &1728585853
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,7 +5924,7 @@ MonoBehaviour:
   enemy: {fileID: 4497973180776560642, guid: 3ef3fad9d3ba84f7f9e5c205e38cc418, type: 3}
   distanceFromPlayer: 20
   secondsPerSpawn: 8
-  secondsBeforeSpawn: 180
+  secondsBeforeSpawn: 0
 --- !u!4 &1770768663
 Transform:
   m_ObjectHideFlags: 0
@@ -9069,7 +9070,7 @@ CompositeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
   m_ColliderPaths:
   - m_Collider: {fileID: 1778624527}
     m_ColliderPaths:
@@ -10201,10 +10202,11 @@ MonoBehaviour:
   - Increase Hammer Size
   - Increase Attack Speed
   - Increase Max Health
-  - Launch Homing Attack
+  - Launch Rockets
   - Have A Plushie Follow
   - Increase Movement Speed
   - Recover Some Health
+  choseRocket: 0
   firstButtonText: {fileID: 1524161350}
   secondButtonText: {fileID: 1329273995}
   thirdButtonText: {fileID: 1148317165}

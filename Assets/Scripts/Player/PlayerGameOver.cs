@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerGameOver : MonoBehaviour
 {
-   public GameObject gameOverPanel;
-   [SerializeField] GameObject weaponParent;
-   public void GameOver()
-   {
+    public GameObject gameOverPanel;
+    [SerializeField] GameObject weaponParent;
+    public void GameOver()
+    {
         Debug.Log("Game Over");
         GetComponent<PlayerMovement>().enabled = false;
         gameOverPanel.SetActive(true);
         weaponParent.SetActive(false);
-   }
+        Time.timeScale = 0f;
+    }
 }
