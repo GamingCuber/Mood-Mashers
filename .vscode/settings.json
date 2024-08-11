@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GameHeads-Project.sln"
+    "dotnet.defaultSolution": "Gameheads-Project.sln"
 }
