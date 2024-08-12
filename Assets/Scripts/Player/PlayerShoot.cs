@@ -11,13 +11,14 @@ public class PlayerShoot : MonoBehaviour
     public float secondsOut = 20.0f;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private int timesOut = 3;
+    [SerializeField] private float secondsBetweenAttack = 0.25f;
 
     void Start()
     {
         leftWave.SetActive(false);
         rightWave.SetActive(false);
         StartCoroutine(shootWaves());
-
+        playerDamage /= 3;
     }
 
 
@@ -27,14 +28,20 @@ public class PlayerShoot : MonoBehaviour
 
         while (true)
         {
+            yield return new WaitForSeconds(secondsOut);
+
+            playerAnimator.SetBool("isAttacking", true);
             for (int i = 0; i < timesOut; i++)
             {
+                leftWave.SetActive(true);
+                rightWave.SetActive(true);
+                yield return new WaitForSeconds(secondsBetweenAttack);
+
+                leftWave.SetActive(false);
+                rightWave.SetActive(false);
+                yield return new WaitForSeconds(secondsBetweenAttack);
 
             }
-            yield return new WaitForSeconds(secondsPerShoot);
-            playerAnimator.SetBool("isAttacking", true);
-            leftWave.SetActive(true);
-            rightWave.SetActive(true);
 
 
             yield return new WaitForSeconds(secondsOut);
