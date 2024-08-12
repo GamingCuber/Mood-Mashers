@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathfindPlayer : MonoBehaviour
+public class EnemyPathFind : MonoBehaviour
 {
     public float followSpeed = 5f;
 

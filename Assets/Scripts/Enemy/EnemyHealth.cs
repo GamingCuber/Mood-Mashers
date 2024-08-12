@@ -9,15 +9,14 @@ public class EnemyHealth : MonoBehaviour
     private float playerDamage;
     private Animator enemyAnimator;
     private Collider2D enemyCollider;
+    private EnemyPathFind enemyPathFind;
     public EnemyDropXP enemyXPManager;
 
     void Start()
     {
-        // This line gets the player object, gets the PlayerShoot script, and then accesses the playerDamage public field
-        playerDamage = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>().playerDamage;
-
         enemyAnimator = gameObject.GetComponent<Animator>();
         enemyCollider = gameObject.GetComponent<Collider2D>();
+        enemyPathFind = gameObject.GetComponent<EnemyPathFind>();
     }
 
     public void damageEnemy(float damage)
@@ -26,9 +25,10 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             enemyCollider.enabled = false;
+            enemyPathFind.enabled = false;
             enemyXPManager.dropXP();
             enemyAnimator.SetTrigger("isDead");
-            Invoke(nameof(killEnemy), 2f);
+            Invoke(nameof(killEnemy), 1.5f);
         }
     }
 
@@ -39,22 +39,13 @@ public class EnemyHealth : MonoBehaviour
         // Checks if the Enemy gets hit by an attack by the player
         if (objectLayer == LayerMask.NameToLayer("Attack"))
         {
-
-            // Subtracts enemy health
-            health -= playerDamage;
+            playerDamage = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>().playerDamage;
+            damageEnemy(playerDamage);
         }
         else if (objectLayer == LayerMask.NameToLayer("Rocket"))
         {
             var rocketDamage = GameObject.FindWithTag("RocketExplosion").GetComponent<RocketExplosionDamage>().rocketDamage;
-            health -= rocketDamage;
-        }
-
-        if (health <= 0)
-        {
-            enemyCollider.enabled = false;
-            enemyXPManager.dropXP();
-            enemyAnimator.SetTrigger("isDead");
-            Invoke(nameof(killEnemy), 2f);
+            damageEnemy(rocketDamage);
         }
     }
 
