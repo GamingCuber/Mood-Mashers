@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedWhenAngry: 4.5
   secondsUntilAngry: 10
-  slugPathFind: {fileID: 0}
+  slugPathFind: {fileID: 529562383758511149}
 --- !u!114 &529562383758511149
 MonoBehaviour:
   m_ObjectHideFlags: 0
