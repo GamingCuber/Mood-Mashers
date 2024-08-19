@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -4508949389623712163}
   m_Layer: 7
   m_Name: ZombieAubrey
-  m_TagString: Enemy
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,6 +8,10 @@ TagManager:
   - Attack
   - Rocket
   - RocketExplosion
+  - Audio
+  - Split
+  - Zombie
+  - Slug
   layers:
   - Default
   - TransparentFX

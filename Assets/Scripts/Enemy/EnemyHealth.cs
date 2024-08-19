@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     private Animator enemyAnimator;
     private Collider2D enemyCollider;
     private EnemyPathFind enemyPathFind;
+    private AudioManager audioManager;
     public EnemyDropXP enemyXPManager;
 
     void Start()
@@ -17,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
         enemyAnimator = gameObject.GetComponent<Animator>();
         enemyCollider = gameObject.GetComponent<Collider2D>();
         enemyPathFind = gameObject.GetComponent<EnemyPathFind>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public void damageEnemy(float damage)
@@ -28,6 +30,20 @@ public class EnemyHealth : MonoBehaviour
             enemyPathFind.enabled = false;
             enemyXPManager.dropXP();
             enemyAnimator.SetTrigger("isDead");
+            var enemyTag = gameObject.tag;
+            switch (enemyTag)
+            {
+                case "Slug":
+                    audioManager.playSound(audioManager.slimeDeath);
+                    break;
+                case "Zombie":
+                    audioManager.playSound(audioManager.zombieDeath);
+                    break;
+                case "Split":
+                    audioManager.playSound(audioManager.splitDeath);
+                    break;
+
+            }
             Invoke(nameof(killEnemy), 1.5f);
         }
     }
