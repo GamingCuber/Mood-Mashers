@@ -14,12 +14,13 @@ GameObject:
   - component: {fileID: 911662988560785681}
   - component: {fileID: 4347142538444620454}
   - component: {fileID: 686127521972100250}
-  - component: {fileID: 1115375371109187695}
   - component: {fileID: 1634457329042836719}
   - component: {fileID: 225543944754965468}
+  - component: {fileID: 3228596544288325294}
+  - component: {fileID: 529562383758511149}
   m_Layer: 7
   m_Name: SlugAubrey
-  m_TagString: Enemy
+  m_TagString: Slug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,21 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XP: {fileID: 2979400687923447167, guid: 6db3296db55795c96ad7cc5ae1ed8035, type: 3}
   XPDropped: 0
---- !u!114 &1115375371109187695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4497973180776560642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7d467f881a09caacb11f33558808745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedWhenPassive: 0.25
-  speedWhenAngry: 4.5
-  secondsUntilAngry: 10
 --- !u!114 &1634457329042836719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,3 +216,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3228596544288325294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497973180776560642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71585dc4e5858d923b82852daf2cd043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedWhenAngry: 4.5
+  secondsUntilAngry: 10
+  slugPathFind: {fileID: 529562383758511149}
+--- !u!114 &529562383758511149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497973180776560642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca97940c2c9fadbb2a1a6f3712c223dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followSpeed: 0.25

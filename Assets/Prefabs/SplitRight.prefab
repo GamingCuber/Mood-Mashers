@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 3677404880617392216}
   m_Layer: 7
   m_Name: SplitRight
-  m_TagString: Enemy
+  m_TagString: Split
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

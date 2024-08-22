@@ -2,38 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using Unity.Mathematics;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
 
 public class TargetRandomEnemy : MonoBehaviour
 {
     [SerializeField] private float homingSpeed;
+    [SerializeField] private float distanceFromPlayer;
     [SerializeField] private Rigidbody2D rocketBody;
-    public float rocketDamage;
-    private Vector2 randomlySelectedEnemyLocation;
-    void Start()
+    [SerializeField] private GameObject rocketExplosion;
+    private Vector2 randomlySelectedLocation;
+    private Vector2 playerLocation;
+
+    public void getLocation()
     {
-        // Gets all things on screen
-        var objectList = FindObjectsOfType<GameObject>();
-        var enemiesList = new List<GameObject>();
+        var player = GameObject.FindGameObjectWithTag("Player");
         var random = new System.Random();
-        // Goes through everything in game, checking to see if they're an enemy
-        for (var i = 0; i < objectList.Length; i++)
+        // Gets the player location
+        playerLocation = player.transform.position;
+        // Gets a random angle from 0 to basically 360
+        var angle = (float)random.NextDouble() * 360;
+
+        var angleToRadians = angle * Mathf.Deg2Rad;
+
+        // Uses angleToRadians to calculate x and y offsets from the player
+        var offsetX = Mathf.Cos(angleToRadians) * distanceFromPlayer;
+        var offsetY = Mathf.Sin(angleToRadians) * distanceFromPlayer;
+
+        // Uses the offsets to calculate a spawn position for the enemy
+        randomlySelectedLocation = playerLocation + new Vector2(offsetX, offsetY);
+
+    }
+
+    void FixedUpdate()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, randomlySelectedLocation, homingSpeed * Time.fixedDeltaTime);
+        // If the rocket has reached its destination
+        if (transform.position.Equals(randomlySelectedLocation))
         {
-            var currentObject = objectList[i];
-            // Checks if the object is both an Enemy and is visible to the player, so enemies outside of the player won't get removed
-            if (currentObject.layer == LayerMask.NameToLayer("Enemy") && currentObject.GetComponent<SpriteRenderer>().isVisible)
-            {
-                enemiesList.Add(currentObject);
-            }
+            Instantiate(rocketExplosion, randomlySelectedLocation, Quaternion.identity);
+            Destroy(gameObject);
         }
-        enemiesList.OrderBy(x => random.Next()).ToList<GameObject>();
-        randomlySelectedEnemyLocation = enemiesList[0].transform.position;
     }
 
     void Update()
     {
-        transform.position = UnityEngine.Vector2.MoveTowards(transform.position, randomlySelectedEnemyLocation, homingSpeed * Time.deltaTime);
-        transform.LookAt(randomlySelectedEnemyLocation);
+        // Just rotates the rocket towards where it wants to go
+        float angle = Mathf.Atan2(randomlySelectedLocation.y - transform.position.y, randomlySelectedLocation.x - transform.position.x) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.Euler(new UnityEngine.Vector3(0, 0, angle));
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 20 * Time.deltaTime);
     }
 }

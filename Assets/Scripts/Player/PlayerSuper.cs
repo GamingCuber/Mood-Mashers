@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerSuper : MonoBehaviour
 {
@@ -19,9 +20,11 @@ public class PlayerSuper : MonoBehaviour
 
     void Update()
     {
+        var gamepad = Gamepad.current;
+
         if (canDoSuper)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || (gamepad != null && gamepad.bButton.wasPressedThisFrame))
             {
                 clearEnemies();
             }
