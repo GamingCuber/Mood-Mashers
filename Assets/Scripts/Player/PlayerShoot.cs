@@ -9,6 +9,7 @@ public class PlayerShoot : MonoBehaviour
     public float playerDamage = 1.0f;
     public float secondsPerShoot = 2.0f;
     public float secondsOut = 20.0f;
+    public AudioManager audio;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private int timesOut = 3;
     [SerializeField] private float secondsBetweenAttack = 0.25f;
@@ -30,9 +31,12 @@ public class PlayerShoot : MonoBehaviour
         {
             yield return new WaitForSeconds(secondsOut);
 
-            playerAnimator.SetBool("isAttacking", true);
+            
             for (int i = 0; i < timesOut; i++)
             {
+                playerAnimator.SetBool("isAttacking", true);
+                audio.playSound(audio.playerHit);
+
                 leftWave.SetActive(true);
                 rightWave.SetActive(true);
                 yield return new WaitForSeconds(secondsBetweenAttack);
