@@ -642,8 +642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7315f2280d6cc034a8ecd4b854eeec21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: yoinks my paraents and college aahhh
-  delay: 0.2
+  input: However, the world around them, like their parents not accepting their gender
+    identity of being non-binary or the stresses of college has been a real nightmare.
+  delay: 0.1
   delayBetweenLines: 2
   characterSprite: {fileID: 21300000, guid: 96605891ead79cb46a4d52fe81cde5d3, type: 3}
   imageholder: {fileID: 1914418342}
@@ -795,8 +796,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7315f2280d6cc034a8ecd4b854eeec21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: Chat real?
-  delay: 0.2
+  input: Aubury is a person who is not having a good time, they are a soon-to-be
+    20-year-old college student trying to figure themselves out.
+  delay: 0.1
   delayBetweenLines: 2
   characterSprite: {fileID: 21300000, guid: 365b770921d8bfd4cac1b9fb83ffae53, type: 3}
   imageholder: {fileID: 1042059531}
@@ -1151,8 +1153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7315f2280d6cc034a8ecd4b854eeec21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: uh no monsters are on the lose
-  delay: 0.2
+  input: This has caused negative mood outbreaks in their mind, fearing being an
+    overworked Zombine, a lazy slug saving everything till the last minute, or the
+    monster that is choosing a split decision.
+  delay: 0.1
   delayBetweenLines: 2
   characterSprite: {fileID: 21300000, guid: 53b9657b4012970489d422c17ec1fb46, type: 3}
   imageholder: {fileID: 75447379}
@@ -1314,7 +1318,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1396,8 +1400,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7315f2280d6cc034a8ecd4b854eeec21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: Then I come in to save the day
-  delay: 0.2
+  input: "That\u2019s where I come in, hi, I\u2019m Sarah Tonin and this is my hammer
+    DopaMean. Together we will smack back these negative moods and get Aub feeling
+    much better!"
+  delay: 0.1
   delayBetweenLines: 2
   characterSprite: {fileID: 21300000, guid: f55d9b98020e7a248a817275036f0d73, type: 3}
   imageholder: {fileID: 281269695}

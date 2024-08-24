@@ -25,7 +25,7 @@ namespace DialogueSystem
             }
 
             //yield return new WaitForSeconds(delayBetweenLines);
-            yield return new WaitUntil(() => Input.anyKeyDown);
+            yield return new WaitForSeconds(delayBetweenLines);
             finished = true;
         }
     }

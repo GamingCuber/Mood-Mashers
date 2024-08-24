@@ -68,4 +68,10 @@ public class PauseMenuManager : MonoBehaviour
         SceneManager.LoadSceneAsync("MainMenu");
     }
 
+    public void toDemoStage()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadSceneAsync("TestScene");
+    }
+
 }
