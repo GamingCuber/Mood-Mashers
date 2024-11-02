@@ -123,8 +123,7 @@ public class LevelUpManager : MonoBehaviour
 
     private void rocketUp()
     {
-        playerRocketManager.startShootingRockets();
-        upgradePanelManager.choseRocket = true;
+        playerRocketManager.numberOfRockets++;
     }
 
     private void scaleUp(float scaling, GameObject gameObject)

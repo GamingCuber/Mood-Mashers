@@ -6,15 +6,20 @@ public class PlayerRocketShooter : MonoBehaviour
 {
     [SerializeField] private GameObject rocket;
     [SerializeField] private float secondsPerShoot;
+    public int numberOfRockets = 0;
 
-    public void startShootingRockets()
+    public void Start()
     {
-        InvokeRepeating(nameof(shootRocket), 0f, secondsPerShoot);
+        InvokeRepeating(nameof(shootRockets), 0f, secondsPerShoot);
     }
-
-    private void shootRocket()
+    private void shootRockets()
     {
-        var rocketInstance = Instantiate(rocket, transform.position, Quaternion.identity);
-        rocketInstance.GetComponent<TargetRandomEnemy>().getLocation();
+        for (int i = 0; i < numberOfRockets; i++)
+        {
+
+            var rocketInstance = Instantiate(rocket, transform.position, Quaternion.identity);
+            rocketInstance.GetComponent<TargetRandomEnemy>().getLocation();
+
+        }
     }
 }
