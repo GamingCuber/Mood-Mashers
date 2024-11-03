@@ -7372,7 +7372,7 @@ MonoBehaviour:
   audio: {fileID: 1015305036}
   playerAnimator: {fileID: 1712089466}
   timesOut: 3
-  secondsBetweenAttack: 0.1
+  secondsBetweenAttack: 0.2
 --- !u!114 &1712089462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7510,6 +7510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 5627933011759697882, guid: b5e68077153ce3e939ac1d78d8f7f663, type: 3}
   secondsPerShoot: 10
+  numberOfRockets: 0
 --- !u!1 &1728585853
 GameObject:
   m_ObjectHideFlags: 0
@@ -12178,7 +12179,6 @@ MonoBehaviour:
   - Have A Plushie Follow
   - Increase Movement Speed
   - Recover Some Health
-  choseRocket: 0
   firstButtonText: {fileID: 1524161350}
   secondButtonText: {fileID: 1329273995}
   thirdButtonText: {fileID: 1148317165}
