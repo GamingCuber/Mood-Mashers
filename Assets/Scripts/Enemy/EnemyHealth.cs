@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
+using TMPro;
+using System.Runtime.CompilerServices;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -12,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     private EnemyPathFind enemyPathFind;
     private AudioManager audioManager;
     public EnemyDropXP enemyXPManager;
+    
 
     void Start()
     {
@@ -68,5 +72,7 @@ public class EnemyHealth : MonoBehaviour
     private void killEnemy()
     {
         Destroy(gameObject);
+         GameManager.Instance.EnemyKilled();
     }
 }
+
