@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CountdownTimer : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] float remainingTime;
     [SerializeField] GameObject Panel;
     [SerializeField] GameObject weaponParent;
+    [SerializeField] GameObject eventSystem;
+    [SerializeField] GameObject retryButton;
 
     void Start()
     {
@@ -31,6 +34,7 @@ public class CountdownTimer : MonoBehaviour
 
     void OpenPanel()
     {
+        eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(retryButton);
         Panel.SetActive(true);
         timerText.text = "00:00";
         weaponParent.SetActive(false);

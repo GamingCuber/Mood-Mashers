@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float currentHealth;
-    public float maxHealth = 20f;
+    public float maxHealth = 1f;
     public float plushieHealth = 0f;
     public float maxPlushieHealth = 20f;
     public bool isInvincible = false;

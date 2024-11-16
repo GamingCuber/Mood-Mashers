@@ -12,7 +12,7 @@ public class CutsceneSkipper : MonoBehaviour
         var gamepad = Gamepad.current;
         if (Input.GetKeyDown(KeyCode.Space) || (gamepad != null && gamepad.startButton.wasPressedThisFrame))
         {
-            SceneManager.LoadSceneAsync("TestScene");
+            SceneManager.LoadSceneAsync("MainScene");
         }
     }
 }
