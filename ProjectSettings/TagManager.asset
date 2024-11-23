@@ -12,6 +12,7 @@ TagManager:
   - Split
   - Zombie
   - Slug
+  - Fade
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Experience
   - Backgroud
   - Rocket
-  - 
+  - StageObjects
   - 
   - 
   - 

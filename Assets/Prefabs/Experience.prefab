@@ -164,7 +164,7 @@ MonoBehaviour:
   hasHit: 0
   distanceUntilFollow: 1
   XPCollider: {fileID: 2563950791170342320}
-  forceFromPlayer: 7.5
+  forceFromPlayer: 4.5
   distanceFromPlayer: 2
   XPBody: {fileID: 5158002263070226584}
   acceleration: 15
