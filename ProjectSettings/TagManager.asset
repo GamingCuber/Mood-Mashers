@@ -13,6 +13,7 @@ TagManager:
   - Zombie
   - Slug
   - Fade
+  - EnemyKillCount
   layers:
   - Default
   - TransparentFX

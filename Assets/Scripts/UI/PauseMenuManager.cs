@@ -9,21 +9,18 @@ using UnityEngine.EventSystems;
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject healthBar;
-    public GameObject superBar;
     public GameObject pauseMenu;
+    public GameObject pauseMenuFirst;
     public bool isPaused = false;
-    [SerializeField] public GameObject pauseMenuFirst;
 
-
-
-    void Start()
+    public void Start()
     {
         pauseMenu.SetActive(false);
         resumeGame();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         var gamepad = Gamepad.current;
 
@@ -46,7 +43,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         healthBar.SetActive(false);
-        superBar.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(pauseMenuFirst);
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -55,7 +52,6 @@ public class PauseMenuManager : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         healthBar.SetActive(true);
-        superBar.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
     }
