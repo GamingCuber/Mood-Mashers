@@ -8047,8 +8047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 20
-  maxHealth: 20
-  plushieHealth: 20
+  maxHealth: 50
+  plushieHealth: 0
   maxPlushieHealth: 20
   isInvincible: 0
   plushie: {fileID: 982838654}

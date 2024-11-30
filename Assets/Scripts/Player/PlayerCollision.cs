@@ -35,5 +35,11 @@ public class PlayerCollision : MonoBehaviour
             }
 
         }
+        else if (objectLayer == LayerMask.NameToLayer("Pie"))
+        {
+            var healthRecovery = collision.gameObject.GetComponent<PieHealth>().healthRecovered;
+            playerHealth.healPlayer(healthRecovery);
+            Destroy(collision.gameObject);
+        }
     }
 }

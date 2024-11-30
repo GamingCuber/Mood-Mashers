@@ -13,6 +13,7 @@ TagManager:
   - Zombie
   - Slug
   - Fade
+  - Pie
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Backgroud
   - Rocket
   - StageObjects
-  - 
+  - Pie
   - 
   - 
   - 

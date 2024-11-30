@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  enemyXPManager: {fileID: 686127521972100250}
+  enemyDropsManager: {fileID: 686127521972100250}
 --- !u!114 &686127521972100250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XP: {fileID: 2979400687923447167, guid: 6db3296db55795c96ad7cc5ae1ed8035, type: 3}
-  XPDropped: 0
+  pie: {fileID: 7109250546381500804, guid: 6ae2d5148d79d4e0cb344d46743905cd, type: 3}
+  probabilityOfXP: 0.9
 --- !u!114 &1634457329042836719
 MonoBehaviour:
   m_ObjectHideFlags: 0

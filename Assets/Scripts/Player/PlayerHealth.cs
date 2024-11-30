@@ -60,6 +60,16 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public void healPlayer(float recovery)
+    {
+        currentHealth += recovery;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthBar.updateBar();
+    }
+
     void killPlayer()
     {
         GetComponent<PlayerGameOver>().GameOver();
