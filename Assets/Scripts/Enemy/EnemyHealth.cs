@@ -14,8 +14,10 @@ public class EnemyHealth : MonoBehaviour
     private Collider2D enemyCollider;
     private EnemyPathFind enemyPathFind;
     private AudioManager audioManager;
+
     private EnemyKillTextUpdater killCountText;
     public EnemyDropXP enemyXPManager;
+    public EnemyDropItem enemyDropsManager;
 
 
     void Start()
@@ -34,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
         {
             enemyCollider.enabled = false;
             enemyPathFind.enabled = false;
-            enemyXPManager.dropXP();
+            enemyDropsManager.dropItem();
             enemyAnimator.SetTrigger("isDead");
             var enemyTag = gameObject.tag;
             switch (enemyTag)
@@ -74,7 +76,11 @@ public class EnemyHealth : MonoBehaviour
     private void killEnemy()
     {
         Destroy(gameObject);
+
         EnemyKillTextUpdater.addEnemy();
+
+        GameManager.Instance.EnemyKilled();
+
     }
 }
 
