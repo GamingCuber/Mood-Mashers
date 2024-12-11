@@ -15,10 +15,6 @@ public class UpgradePanelManager : MonoBehaviour
     [SerializeField] LevelUpManager levelUps;
     [SerializeField] Sprite[] upgradeImages;
     [SerializeField] string[] upgradeTexts;
-
-    PauseMenuManager PauseManager;
-
-
     public TMP_Text firstButtonText;
     public TMP_Text secondButtonText;
     public TMP_Text thirdButtonText;
@@ -29,7 +25,7 @@ public class UpgradePanelManager : MonoBehaviour
     public Button firstButton;
     public Button secondButton;
     public Button thirdButton;
-    private Array levelUpgrades;
+    private LevelUpManager.LevelUpgrades[] levelUpgrades;
     private List<int> indexes;
 
     void Start()
@@ -41,19 +37,20 @@ public class UpgradePanelManager : MonoBehaviour
     }
     private void fillUpgradesList()
     {
-        levelUpgrades = Enum.GetValues(typeof(LevelUpManager.LevelUpgrades));
+        levelUpgrades = (LevelUpManager.LevelUpgrades[])Enum.GetValues(typeof(LevelUpManager.LevelUpgrades));
     }
 
     private List<int> randomIndexes()
     {
+        fillUpgradesList();
         var indexes = new List<int>();
         var numberOfUpgrades = Enum.GetValues(typeof(LevelUpManager.LevelUpgrades)).Length;
         for (var i = 0; i < numberOfUpgrades - 1; i++)
         {
-            // Add Logic that checks if the value is not apart of the completed upgrades list 8/1/2024
+            //TODO: Add Logic that checks if the value is not apart of the completed upgrades list 8/1/2024
             indexes.Add(i);
         }
-        var random = new System.Random();   
+        var random = new System.Random();
         // Just shuffles the index list so the order is random
         indexes = indexes.OrderBy(i => random.Next()).ToList();
         return indexes.GetRange(0, 3);

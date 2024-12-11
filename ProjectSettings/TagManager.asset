@@ -7,6 +7,13 @@ TagManager:
   - Enemy
   - Attack
   - Rocket
+  - RocketExplosion
+  - Audio
+  - Split
+  - Zombie
+  - Slug
+  - Fade
+  - Pie
   layers:
   - Default
   - TransparentFX
@@ -20,8 +27,8 @@ TagManager:
   - Experience
   - Backgroud
   - Rocket
-  - 
-  - 
+  - StageObjects
+  - Pie
   - 
   - 
   - 

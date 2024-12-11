@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
+using TMPro;
+using System.Runtime.CompilerServices;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,15 +12,17 @@ public class EnemyHealth : MonoBehaviour
     private float playerDamage;
     private Animator enemyAnimator;
     private Collider2D enemyCollider;
-    public EnemyDropXP enemyXPManager;
+    private EnemyPathFind enemyPathFind;
+    private AudioManager audioManager;
+    public EnemyDropItem enemyDropsManager;
+
 
     void Start()
     {
-        // This line gets the player object, gets the PlayerShoot script, and then accesses the playerDamage public field
-        playerDamage = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>().playerDamage;
-
         enemyAnimator = gameObject.GetComponent<Animator>();
         enemyCollider = gameObject.GetComponent<Collider2D>();
+        enemyPathFind = gameObject.GetComponent<EnemyPathFind>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public void damageEnemy(float damage)
@@ -26,9 +31,24 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             enemyCollider.enabled = false;
-            enemyXPManager.dropXP();
+            enemyPathFind.enabled = false;
+            enemyDropsManager.dropItem();
             enemyAnimator.SetTrigger("isDead");
-            Invoke(nameof(killEnemy), 2f);
+            var enemyTag = gameObject.tag;
+            switch (enemyTag)
+            {
+                case "Slug":
+                    audioManager.playSound(audioManager.slimeDeath);
+                    break;
+                case "Zombie":
+                    audioManager.playSound(audioManager.zombieDeath);
+                    break;
+                case "Split":
+                    audioManager.playSound(audioManager.splitDeath);
+                    break;
+
+            }
+            Invoke(nameof(killEnemy), 1.5f);
         }
     }
 
@@ -39,28 +59,20 @@ public class EnemyHealth : MonoBehaviour
         // Checks if the Enemy gets hit by an attack by the player
         if (objectLayer == LayerMask.NameToLayer("Attack"))
         {
-
-            // Subtracts enemy health
-            health -= playerDamage;
+            playerDamage = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>().playerDamage;
+            damageEnemy(playerDamage);
         }
         else if (objectLayer == LayerMask.NameToLayer("Rocket"))
         {
-            var rocketDamage = GameObject.FindWithTag("Rocket").GetComponent<TargetRandomEnemy>().rocketDamage;
-            health -= rocketDamage;
-            Destroy(collision.gameObject);
-        }
-
-        if (health <= 0)
-        {
-            enemyCollider.enabled = false;
-            enemyXPManager.dropXP();
-            enemyAnimator.SetTrigger("isDead");
-            Invoke(nameof(killEnemy), 2f);
+            var rocketDamage = GameObject.FindWithTag("RocketExplosion").GetComponent<RocketExplosionDamage>().rocketDamage;
+            damageEnemy(rocketDamage);
         }
     }
 
     private void killEnemy()
     {
         Destroy(gameObject);
+        GameManager.Instance.EnemyKilled();
     }
 }
+

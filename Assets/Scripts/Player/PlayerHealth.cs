@@ -6,17 +6,18 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float currentHealth;
-    public float maxHealth = 20f;
+    public float maxHealth = 1f;
     public float plushieHealth = 0f;
     public float maxPlushieHealth = 20f;
     public bool isInvincible = false;
     public PlushiePlayerFollow plushie;
     public PlushieBarManager plushieBar;
     public GameObject fullPlushieBar;
-    [SerializeField] private float secondsInvincible;
+    public float secondsInvincible;
     [SerializeField] private Collider2D PlayerCollider;
     [SerializeField] private HealthBarManager healthBar;
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private PlayerInvincibilityFlicker playerInvincibility;
     private bool isDead;
     void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
         if (isDead == true) { return; }
         isInvincible = true;
         Invoke(nameof(removeInvincibility), secondsInvincible);
+        playerInvincibility.invincibilityFlicker();
         playerAnimator.SetTrigger("isHurt");
         // Checks whether plushie health is still there
         if (plushieHealth > 0.1f)
@@ -56,6 +58,16 @@ public class PlayerHealth : MonoBehaviour
             }
         }
 
+    }
+
+    public void healPlayer(float recovery)
+    {
+        currentHealth += recovery;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthBar.updateBar();
     }
 
     void killPlayer()
