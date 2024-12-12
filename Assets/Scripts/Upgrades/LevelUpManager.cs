@@ -24,6 +24,8 @@ public class LevelUpManager : MonoBehaviour
     public GameObject plushieBar;
     public PlushieBarManager plushieBarManager;
     public UpgradePanelManager upgradePanelManager;
+    public Image plushieImage;
+    public Image rocketImage;
 
     public enum LevelUpgrades
     {
@@ -117,6 +119,7 @@ public class LevelUpManager : MonoBehaviour
     {
         playerHealth.plushieHealth = 20f;
         plushie.plushieRenderer.enabled = true;
+        plushieImage.color = Color.white;
         plushieBar.SetActive(true);
         plushieBarManager.updateBar();
     }
@@ -124,6 +127,7 @@ public class LevelUpManager : MonoBehaviour
     private void rocketUp()
     {
         playerRocketManager.numberOfRockets++;
+        rocketImage.color = Color.white;
     }
 
     private void scaleUp(float scaling, GameObject gameObject)
