@@ -31,7 +31,7 @@ public class PlayerShoot : MonoBehaviour
         {
             yield return new WaitForSeconds(secondsOut);
 
-            
+
             for (int i = 0; i < timesOut; i++)
             {
                 playerAnimator.SetBool("isAttacking", true);

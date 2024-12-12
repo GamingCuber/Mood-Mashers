@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     private EnemyPathFind enemyPathFind;
     private AudioManager audioManager;
     public EnemyDropItem enemyDropsManager;
+    public EnemyKillTextUpdater enemyKillText;
 
 
     void Start()
@@ -23,6 +24,7 @@ public class EnemyHealth : MonoBehaviour
         enemyCollider = gameObject.GetComponent<Collider2D>();
         enemyPathFind = gameObject.GetComponent<EnemyPathFind>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        enemyKillText = GameObject.FindGameObjectWithTag("EnemyText").GetComponent<EnemyKillTextUpdater>();
     }
 
     public void damageEnemy(float damage)
@@ -72,7 +74,7 @@ public class EnemyHealth : MonoBehaviour
     private void killEnemy()
     {
         Destroy(gameObject);
-        GameManager.Instance.EnemyKilled();
+        enemyKillText.updateText();
     }
 }
 
