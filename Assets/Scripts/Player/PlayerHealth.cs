@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public PlushieBarManager plushieBar;
     public GameObject fullPlushieBar;
     public float secondsInvincible;
+    public Image plushieImage;
     [SerializeField] private Collider2D PlayerCollider;
     [SerializeField] private HealthBarManager healthBar;
     [SerializeField] private Animator playerAnimator;
@@ -49,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             plushie.plushieRenderer.enabled = false;
+            plushieImage.color = Color.gray;
             currentHealth -= damage;
             healthBar.updateBar();
 
