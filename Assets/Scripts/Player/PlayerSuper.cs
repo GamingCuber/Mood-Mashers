@@ -7,11 +7,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerSuper : MonoBehaviour
 {
+    [SerializeField] private Animator playerAnimator;
     [SerializeField] private float superDamage;
     [SerializeField] private SuperBarManager superBarManager;
     [SerializeField] private TMP_Text superBarText;
+    public PlayerHealth playerHealth;
     public float secondsPerSuper = 5f;
     private bool canDoSuper = false;
+
+
     void Start()
     {
         Invoke(nameof(makeSuperAvailable), secondsPerSuper);
@@ -26,15 +30,23 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || (gamepad != null && gamepad.bButton.wasPressedThisFrame))
             {
-                clearEnemies();
+
+
+                playerHealth.gainInvincibility();
+                playerAnimator.SetBool("isSupering", true);
+
             }
         }
     }
+
+
+
     private void makeSuperAvailable()
     {
+
         canDoSuper = true;
     }
-    private void clearEnemies()
+    void clearEnemies()
     {
         // Gets all things on screen
         var objectList = FindObjectsOfType<GameObject>();
@@ -62,6 +74,8 @@ public class PlayerSuper : MonoBehaviour
                 currentObject.GetComponent<EnemyHealth>().damageEnemy(superDamage);
             }
         }
+        playerAnimator.SetBool("isSupering", false);
+        playerHealth.removeInvincibility();
         canDoSuper = false;
         superBarManager.resetBar();
         superBarText.enabled = false;

@@ -54,4 +54,9 @@ public class PlayerShoot : MonoBehaviour
             rightWave.SetActive(false);
         }
     }
+
+    void stopAnimating()
+    {
+        playerAnimator.SetBool("isAttacking", false);
+    }
 }

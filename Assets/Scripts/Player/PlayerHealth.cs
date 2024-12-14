@@ -78,8 +78,14 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerGameOver>().GameOver();
         isDead = true;
     }
-    private void removeInvincibility()
+
+    public void removeInvincibility()
     {
         isInvincible = false;
+    }
+
+    public void gainInvincibility()
+    {
+        isInvincible = true;
     }
 }
