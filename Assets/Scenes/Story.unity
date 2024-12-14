@@ -798,7 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7315f2280d6cc034a8ecd4b854eeec21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: Aubury's stressors have gotten the worst of them; they are a soon-to-be
+  input: Aubrey's stressors have gotten the worst of them; they are a soon-to-be
     20-year-old college student trying to figure themselves out.
   delay: 0.1
   delayBetweenLines: 2
@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: In response, negative mood outbreaks in their mind have occurred, bringing
     to mind an overworked Zombine, a lazy slug saving everything till the last minute,
-    and the enemy which splits all encompass their mind.
+    and the enemy which splits.
   delay: 0.1
   delayBetweenLines: 2
   characterSprite: {fileID: 21300000, guid: 53b9657b4012970489d422c17ec1fb46, type: 3}
