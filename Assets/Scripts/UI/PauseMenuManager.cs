@@ -13,12 +13,14 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject pauseMenu;
     public bool isPaused = false;
     [SerializeField] public GameObject pauseMenuFirst;
+    private EventSystem eventSystem;
 
 
 
     void Start()
     {
         pauseMenu.SetActive(false);
+        eventSystem = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<EventSystem>();
         resumeGame();
     }
 
@@ -47,6 +49,7 @@ public class PauseMenuManager : MonoBehaviour
         pauseMenu.SetActive(true);
         healthBar.SetActive(false);
         superBar.SetActive(false);
+        eventSystem.SetSelectedGameObject(pauseMenuFirst);
         Time.timeScale = 0f;
         isPaused = true;
     }

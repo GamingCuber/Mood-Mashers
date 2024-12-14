@@ -15,6 +15,7 @@ TagManager:
   - Fade
   - Pie
   - EnemyText
+  - EventSystem
   layers:
   - Default
   - TransparentFX
