@@ -34,7 +34,7 @@ public class PlayerXPManager : MonoBehaviour
 
     private void levelUp()
     {
-        eventSystem.GetComponent<EventSystem>();
+        eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(firstLevelUpButton); ;
         UpgradePanel.OpenPanel();
         currentAmount = 0;
         currentLevel++;
