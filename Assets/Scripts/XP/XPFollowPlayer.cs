@@ -35,7 +35,7 @@ public class XPFollowPlayer : MonoBehaviour
             }
             else
             {
-                XPBody.velocity = Vector2.zero;
+                XPBody.linearVelocity = Vector2.zero;
                 XPBody.angularVelocity = 0f;
             }
         }
