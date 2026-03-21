@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,8 +10,18 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementVector;
     private Animator playerAnimator;
     private SpriteRenderer playerRenderer;
-    public PauseMenuManager pauseMenu;
+	public PauseMenuManager pauseMenu;
+    public InputAction playerControls;
 
+    void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    void OnDisable()
+    {
+        playerControls.Disable();
+    }
 
     void Start()
     {
@@ -19,9 +30,16 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+
         // Creates a movement vector based on player input
-        movementVector.x = Input.GetAxisRaw("Horizontal");
-        movementVector.y = Input.GetAxisRaw("Vertical");
+        // OLD INPUT SYSTEM, LEFT FOR TESTING PURPOSES
+        //movementVector.x = Input.GetAxisRaw("Horizontal");
+        //movementVector.y = Input.GetAxisRaw("Vertical");
+
+        // Creates a movement vector based on player input, new input system
+        // To change controls, go to the Player object in inspector and go down to the player movement script
+        movementVector = playerControls.ReadValue<Vector2>();
+
         // If the player isn't moving, plays idle animation
         if (movementVector.x == 0 && movementVector.y == 0)
         {
