@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.updateBar();
     }
 
     // Helper function that damages the player by a given amount "damage"
@@ -55,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= damage;
             healthBar.updateBar();
 
-            if (currentHealth < 0)
+            if (currentHealth < 1f)
             {
                 killPlayer();
             }
@@ -66,11 +67,11 @@ public class PlayerHealth : MonoBehaviour
     public void healPlayer(float recovery)
     {
         currentHealth += recovery;
+        healthBar.updateBar();
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
-        healthBar.updateBar();
     }
 
     void killPlayer()

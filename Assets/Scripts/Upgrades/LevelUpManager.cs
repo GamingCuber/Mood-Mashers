@@ -85,6 +85,7 @@ public class LevelUpManager : MonoBehaviour
             newHealth = playerHealth.maxHealth;
         }
         playerHealth.currentHealth = newHealth;
+        playerHealthBar.updateBar();
 
     }
 
