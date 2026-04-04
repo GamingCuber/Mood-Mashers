@@ -28,7 +28,7 @@ public class PlayerSuper : MonoBehaviour
 
         if (canDoSuper)
         {
-            if (Input.GetKeyDown(KeyCode.Space) || (gamepad != null && gamepad.bButton.wasPressedThisFrame))
+            if (Keyboard.current.spaceKey.wasPressedThisFrame || (gamepad != null && gamepad.bButton.wasPressedThisFrame))
             {
 
 
