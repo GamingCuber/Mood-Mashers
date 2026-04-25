@@ -640,10 +640,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: Their world has collapsed all around them. Both their parent's lack of acceptance
-    of their gender identity and their upcoming college experience has weighed them
-    down.
-  delay: 0.1
-  delayBetweenLines: 2
+    of their gender idenity and  their up coming  college experience has weighed
+    them down.
+  delay: 0.03
+  delayBetweenLines: 3
   characterSprite: {fileID: 21300000, guid: 96605891ead79cb46a4d52fe81cde5d3, type: 3}
   imageholder: {fileID: 1914418342}
 --- !u!114 &474826892
@@ -799,8 +799,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: Aubrey's stressors have gotten the worst of them; they are a soon-to-be
     20-year-old college student trying to figure themselves out.
-  delay: 0.1
-  delayBetweenLines: 2
+  delay: 0.03
+  delayBetweenLines: 3
   characterSprite: {fileID: 21300000, guid: 365b770921d8bfd4cac1b9fb83ffae53, type: 3}
   imageholder: {fileID: 1042059531}
 --- !u!114 &915879100
@@ -1158,11 +1158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7315f2280d6cc034a8ecd4b854eeec21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: In response, negative mood outbreaks in their mind have occurred, bringing
-    to mind an overworked Zombine, a lazy slug saving everything till the last minute,
-    and the enemy which splits.
-  delay: 0.1
-  delayBetweenLines: 2
+  input: In Response, negative mood outbreaks in their mind have occurred, bringing
+    to mind an overworked zombine, a lazy slug who waits to the last minute, and
+    fear of the split paths we take.
+  delay: 0.03
+  delayBetweenLines: 3
   characterSprite: {fileID: 21300000, guid: 53b9657b4012970489d422c17ec1fb46, type: 3}
   imageholder: {fileID: 75447379}
 --- !u!114 &1261446770
@@ -1545,11 +1545,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7315f2280d6cc034a8ecd4b854eeec21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: "That\u2019s where I come in! Hi, I\u2019m Sarah Tonin, and this is my hammer
-    DopaMean. Together, we will smack back these negative moods and get Aub feeling
-    much better!"
-  delay: 0.1
-  delayBetweenLines: 2
+  input: That's where I come in! I'm  Sarah Tonin , and this is my hammer DopaMean.
+    Together, we will smack back those  negative moods and get Aub feeling much better!
+  delay: 0.03
+  delayBetweenLines: 3
   characterSprite: {fileID: 21300000, guid: f55d9b98020e7a248a817275036f0d73, type: 3}
   imageholder: {fileID: 281269695}
 --- !u!114 &1713736376
