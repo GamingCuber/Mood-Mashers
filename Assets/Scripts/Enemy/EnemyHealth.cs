@@ -63,6 +63,7 @@ public class EnemyHealth : MonoBehaviour
         {
             playerDamage = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>().playerDamage;
             damageEnemy(playerDamage);
+
         }
         else if (objectLayer == LayerMask.NameToLayer("Rocket"))
         {

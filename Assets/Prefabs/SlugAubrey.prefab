@@ -256,3 +256,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 0.25
+  stunedTime: 0.8
